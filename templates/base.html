@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/cbf695508f.js"
-        crossorigin="anonymous" type="text/css"></script>
+    <script src="https://kit.fontawesome.com/cbf695508f.js" crossorigin="anonymous"></script>
     <!--Materialize CDN -CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
@@ -15,10 +14,35 @@
     <title>M C Revue</title>
 </head>
 <body>
-    <h1> Base Template</h1>
+    <header>
+        <nav class="nav-extended">
+            <div class="nav-wrapper red darken-1">
+              <a href="#" class="brand-logo">M C Revue</a>
+              <div class="nav-content">
+                    <span class="nav-title"></span>
+                    <a class="btn-floating btn-large right fab toolbar-enabled-true white">
+                    <i class="fas fa-film black-text"></i>
+                    </a>
+              </div>
+              <ul class="left hide-on-med-and-down black">
+                    <li>Movie</li>
+                    <li>Review</li>
+                    <li>Banana</li>
+              </ul>
+            </div>
+        </nav>
+    </header>
+    
     {% block content %}
     {% endblock %}
 
+    <footer>
+        FURY Quote
+        Links
+        Copwright
+    </footer>
+    {% block footer %}
+    {% endblock %}
     <!-- JQuery-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!--Materialize CDN- Javascript-->
