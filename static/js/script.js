@@ -1,5 +1,3 @@
 $(document).ready(function(){
-    $('.action-button').floatingActionButton({
-      toolbarEnabled: true
-    });
-})
+  $('.sidenav').sidenav({edge: 'right'});
+});

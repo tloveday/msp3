@@ -5,10 +5,10 @@
         <div class="row">
             {% for movie in movies %}
                 <div class="col s12 m4 l3">
-                    <div class="card-panel center-align">
-                        {{ movie.title }}<br>
-                        {{ movie.release_date }} <br>
-                        {{ movie.focus}}<br>
+                    <div class="card center-align">
+                        <span class="card-title">{{ movie.title }}</span><br>
+                        <span>Release Date:</span> {{ movie.release_date }} <br>
+                        <span>Character Focus:</span> {{ movie.focus}}<br>
                         <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
                         <a href="#" class="btn blue"> <i class="far fa-edit right"></i>Re-View</a>
                     </div>

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/cbf695508f.js" crossorigin="anonymous"></script>
+    <!--Uincons via Iconscout-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!--Materialize CDN -CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
@@ -15,16 +17,30 @@
 </head>
 <body>
     <header>
-        <nav class="nav-extended brand">
-            <div class="nav-wrapper">
-              <a href="#!" class="brand-logo">M C RE-View</a>
-              <ul class="right hide-on-med-and-down">
-                <li><a>A link</a></li>
-                <li><a>A second link</a></li>
-                <li><a>A third link</a></li>
-              </ul>
-            </div>
-          </nav>
+      <nav>
+        <div class="nav-wrapper text-shadow red darken-2">
+          <a href="#!" class="brand-logo">MCRe-Vue</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="far fa-star"></i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">TV Show</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Sign Out</a></li>
+            <li><a href="#">Register</a></li>          
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav red-text text-darken-2" id="mobile-demo">
+        <li><h4 class="center-align"> MC Re-View</h4></li>
+        <li><a href="#"><i class="uil uil-estate red-text text-darken-2"></i>Home</a></li>
+        <li><a href="#"><i class="uil uil-film red-text text-darken-2"></i>Movies</a></li>
+        <li><a href="#"><i class="uil uil-tv-retro red-text text-darken-2"></i>TV Show</a></li>
+        <li><a href="#"><i class="fas fa-mask red-text text-darken-2"></i>Sign In</a></li>
+        <li><a href="#">Sign Out</a></li>
+        <li><a href="#">Register</a></li> 
+    </ul>
     </header>
     
     {% block content %}
