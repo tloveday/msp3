@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-    
+    <h2>The Marvel Cinematic Universe</h2>
     <div>
-        Hello There
+        <div class="row">
+            {% for movie in movies %}
+                <div class="col s12 m4 l3">
+                    <div class="card-panel center-align">
+                        {{ movie.title }}<br>
+                        {{ movie.release_date }} <br>
+                        {{ movie.focus}}<br>
+                        <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
+                        <a href="#" class="btn blue"> <i class="far fa-edit right"></i>Re-View</a>
+                    </div>
+                    
+                </div>   
+           {% endfor %}
+        </div> 
     </div>
 {% endblock %}
 {% block footer %}

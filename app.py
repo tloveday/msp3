@@ -21,7 +21,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_movies")
 def get_movies():
-    return render_template("movies.html")
+    movies = mongo.db.movies.find()
+    return render_template("movies.html", movies=movies)
 
 
 if __name__ == '__main__':
