@@ -22,7 +22,7 @@
           <a href="#!" class="brand-logo">MCRE-Vue</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="far fa-star"></i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('landing') }}">Home</a></li>
             <li><a href="{{ url_for('get_movies') }}">Movies</a></li>
             <li><a href="{{ url_for('get_television') }}">TV Show</a></li>
             <li><a href="#">Sign In</a></li>
@@ -34,7 +34,7 @@
     
       <ul class="sidenav red-text text-darken-2" id="mobile-demo">
         <li><h4 class="center-align"> MC Re-View</h4></li>
-        <li><a href="#"><i class="uil uil-estate red-text text-darken-2"></i>Home</a></li>
+        <li><a href="{{ url_for('landing') }}"><i class="uil uil-estate red-text text-darken-2"></i>Home</a></li>
         <li><a href="{{ url_for('get_movies') }}"><i class="uil uil-film red-text text-darken-2"></i>Movies</a></li>
         <li><a href="{{ url_for('get_television') }}"><i class="uil uil-tv-retro red-text text-darken-2"></i>TV Show</a></li>
         <li><a href="#"><i class="fas fa-mask red-text text-darken-2"></i>Sign In</a></li>
