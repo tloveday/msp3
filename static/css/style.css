@@ -3,3 +3,11 @@
 .text-shadow{
     text-shadow: 2px, 2px, 2px, rgba(0, 0, 0, 0.5);
 }
+
+.card{
+    border-radius: 1rem;
+}
+
+.btn{
+    margin: 1rem;
+}
