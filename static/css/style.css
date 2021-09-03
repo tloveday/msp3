@@ -1,4 +1,4 @@
-/* Fonts */
+/*  ==== Font ==== */
 
 .text-shadow{
     text-shadow: 2px, 2px, 2px, rgba(0, 0, 0, 0.5);
@@ -10,4 +10,9 @@
 
 .btn{
     margin: 5px;
+}
+
+/*  ==== Images ==== */
+.tv-logo{
+    max-height: 200px;
 }
