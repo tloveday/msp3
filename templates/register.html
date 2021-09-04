@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="center-align red-text text-darken-2">Register</h2>
+    <div class="row">
+        <form class="col s12 m6 offset-m3" method="POST">
+            <div class="card-panel center-align text-shadow">
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <i class="fas fa-id-badge prefix red-text text-darken-2"></i>
+                        <input id="username" name="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <i class="fas fa-user-shield prefix red-text text-darken-2"></i>
+                        <input id="password" name="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="col s8 offset-s2 btn-large red darken-2 text-shadow">
+                        Submit <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+{% block footer %}
+{% endblock %}
