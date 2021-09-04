@@ -16,3 +16,8 @@
 .tv-logo{
     max-height: 200px;
 }
+
+/*  ==== Flash Messages ==== */
+.flashes h4{
+    line-height: 2;
+}
