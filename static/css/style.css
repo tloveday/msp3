@@ -12,11 +12,18 @@
     margin: 5px;
 }
 
+/*  ==== Cards ==== */
+.card{
+    min-height: 350px;
+}
 /*  ==== Images ==== */
 .tv-logo{
     max-height: 200px;
 }
 
+.movie-logo{
+    max-height: 125px;
+}
 /*  ==== Flash Messages ==== */
 .flashes h4{
     line-height: 2;

@@ -4,21 +4,37 @@
     <div>
         <div class="row">
             {% for movie in movies %}
+                {% if movie.poster == "yes" %}
+                    <div class="col s12 m4 l3">
+                        <div class="card horizontal center-align valign-wrapper">
+                            <div class="card-image valign-wrapper">
+                                <img class="poster"  src="static/images/movies/{{ movie.code }}.png">
+                            </div>
+                            <div class="card-stacked">
+                                <span class="card-title flow-text red-text text-darken-2">{{ movie.title }}</span><br>
+                                <span>Release Date:</span> {{ movie.release_date }} <br>
+                                <span>Character Focus:</span> {{ movie.focus }}<br>
+                                <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
+                                <a href="#" class="btn blue"> <i class="far fa-edit right"></i>Re-View</a>
+                            </div>
+                    </div>
+                </div>
+                {% else %}
                 <div class="col s12 m4 l3">
-                    <div class="card horizontal center-align">
+                    <div class="card center-align">
                         <div class="card-image">
-                            <img class="poster"  src="static/images/movies/{{ movie.code }}.png">
+                            <img class="movie-logo"  src="static/images/movies/{{ movie.code }}.png">
                         </div>
                         <div class="card-stacked">
                             <span class="card-title flow-text red-text text-darken-2">{{ movie.title }}</span><br>
-                            <span>Release Date:</span> {{ movie.release_date }} <br>
+                            <span>Release Date:</span> {{ movie.release }} <br>
                             <span>Character Focus:</span> {{ movie.focus }}<br>
                             <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
                             <a href="#" class="btn blue"> <i class="far fa-edit right"></i>Re-View</a>
                         </div>
-                    </div>
-                    
-                </div>   
+                    </div> 
+                </div>  
+            {% endif %} 
            {% endfor %}
         </div> 
     </div>
