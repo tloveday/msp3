@@ -7,13 +7,12 @@
                 <div class="col s12 m4 l3">
                     <div class="card center-align">
                         <span class="card-title flow-text red-text text-darken-2">{{ tvshow.title }}</span>
-                        <div class="card-image">
+                        <div class="card-image circle">
                             <img class="tv-logo"  src="static/images/tv/{{ tvshow.code }}.png">
                         </div>
                         <div class="card-stacked">
-                            <span>Release Date:</span> {{ tvshow.release }} <br>
+                            <span>Release Date:</span> <span class="result"> {{ tvshow.release }} </span> <br>
                             <span>Seasons:</span> {{ tvshow.seasons }} <span>Episodes:</span> {{ tvshow.episodes }}<br>
-                            <span>Character Focus:</span> {{ tvshow.focus }}<br>
                             <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
                             <a href="#" class="btn blue"> <i class="far fa-edit right"></i>Re-View</a>
                         </div>
