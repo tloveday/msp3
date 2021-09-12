@@ -7,14 +7,16 @@
                 <div class="row">
                     <div class="input-field col s8 offset-s2">
                         <i class="fas fa-id-badge prefix red-text text-darken-2"></i>
-                        <input id="username" name="username" type="text" class="validate">
+                        <input id="username" name="username" type="text" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s8 offset-s2">
                         <i class="fas fa-user-shield prefix red-text text-darken-2"></i>
-                        <input id="password" name="password" type="password" class="validate">
+                        <input id="password" name="password" type="password" minlength="5"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate">
                         <label for="password">Password</label>
                     </div>
                 </div>
