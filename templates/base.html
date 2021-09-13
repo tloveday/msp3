@@ -20,13 +20,13 @@
       <nav>
         <!-- Links in Navbar in Header-->
         <div class="nav-wrapper text-shadow red darken-2">
-          <a href="#!" class="brand-logo">M C RE-VUE</a>
+          <a href="{{ url_for('landing') }}" class="brand-logo">M C RE-VUE</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="far fa-star"></i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="{{ url_for('landing') }}">Home</a></li>
             <li><a href="{{ url_for('get_movies') }}">Movies</a></li>
             <li><a href="{{ url_for('get_television') }}">TV Show</a></li>
-            <li><a href="#">Sign In</a></li>
+            <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
             <li><a href="#">Sign Out</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>          
           </ul>
@@ -39,7 +39,7 @@
         <li><a href="{{ url_for('landing') }}"><i class="uil uil-estate red-text text-darken-2"></i>Home</a></li>
         <li><a href="{{ url_for('get_movies') }}"><i class="uil uil-film red-text text-darken-2"></i>Movies</a></li>
         <li><a href="{{ url_for('get_television') }}"><i class="uil uil-tv-retro red-text text-darken-2"></i>TV Show</a></li>
-        <li><a href="#"><i class="fas fa-mask red-text text-darken-2"></i>Sign In</a></li>
+        <li><a href="{{ url_for('sign_in') }}"><i class="fas fa-mask red-text text-darken-2"></i>Sign In</a></li>
         <li><a href="#">Sign Out</a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li> 
     </ul>
@@ -65,7 +65,7 @@
 
     <!-- Source taken from Materliaze and customised-->
     <footer class="page-footer red darken-1">
-        <div class="container valign-wrapper">
+        <div class="container black valign-wrapper">
           <div class="row">
             <div class="col l6 s12">
               <blockquote class="white-text ">“There was an idea, to bring together a group of remarkable people to see if they could become something more.
@@ -86,7 +86,7 @@
         </div>
         <div class="footer-copyright">
           <div class="container center-align">
-          © Copywrite 2021 <br> Images Belong To Marvel Entertainent Inc, owned by The Walt Disney Company.<br>
+          © Copyright 2021 <br> Images Belong To Marvel Entertainent Inc, owned by The Walt Disney Company.<br>
           All Opinions exprssed are those of the  reviewers and do not represent those of M C RE-VUE.
           </div>
         </div>

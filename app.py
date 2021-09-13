@@ -23,7 +23,9 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/landing")
 def landing():
-    return render_template("index.html")
+    movies = mongo.db.movies.find()
+    tvshows = mongo.db.tvshows.find()
+    return render_template("index.html", movies=movies, tvshows=tvshows)
 
 
 # Registration Page
@@ -48,6 +50,34 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful - Welcome to Level 7!")
     return render_template("register.html")
+
+
+# Sign In Page
+@app.route("/sign_in", methods=["GET", "POST"])
+def sign_in():
+    if request.method == "POST":
+        # Check Database for Username
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # Check passwords match
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash(
+                        "Welcome Back Agent {}".format(request.form.get("username")))
+            else:
+                # Incorrect password
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("sign_in"))
+
+        else:
+            # No Username
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("sign_in"))
+
+    return render_template("sign_in.html")
 
 
 # Movies Page
