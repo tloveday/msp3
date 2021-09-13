@@ -5,10 +5,12 @@
         <div class="row">
             {% for movie in movies %}
                 {% if movie.poster == "yes" %}
+                <!-- Source taken from Materliaze and customised-->
+                <!-- Movies released/close to release and have theatrical posters-->
                     <div class="col s12 m4">
                         <div class="card horizontal center-align valign-wrapper">
                             <div class="card-image valign-wrapper">
-                                <img class="poster"  src="static/images/movies/{{ movie.code }}.png">
+                                <img class="poster"  src="static/images/movies/{{ movie.code }}.png" alt="{{ movie.title }}">
                             </div>
                             <div class="card-stacked">
                                 <span class="card-title flow-text red-text text-darken-2">{{ movie.title }}</span><br>
@@ -20,10 +22,11 @@
                     </div>
                 </div>
                 {% else %}
+                <!-- Movies that do not have theatrical posters-->
                 <div class="col s12 m4 l3">
                     <div class="card center-align">
                         <div class="card-image">
-                            <img class="movie-logo"  src="static/images/movies/{{ movie.code }}.png">
+                            <img class="movie-logo"  src="static/images/movies/{{ movie.code }}.png" alt="{{ movie.title }}">
                         </div>
                         <div class="card-stacked">
                             <span class="card-title flow-text red-text text-darken-2">{{ movie.title }}</span><br>

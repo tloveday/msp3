@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>The Marvel Cinematic Universe: Shows</h2>
+    <h2>The Marvel Cinematic Universe: TV Shows</h2>
     <div>
         <div class="row">
             {% for tvshow in tvshows %}
@@ -8,7 +8,7 @@
                     <div class="card center-align">
                         <span class="card-title flow-text red-text text-darken-2">{{ tvshow.title }}</span>
                         <div class="card-image circle">
-                            <img class="tv-logo"  src="static/images/tv/{{ tvshow.code }}.png">
+                            <img class="tv-logo"  src="static/images/tv/{{ tvshow.code }}.png" alt="{{ tvshow.title }}">
                         </div>
                         <div class="card-stacked">
                             <span>Release Date:</span> <span class="result"> {{ tvshow.release }} </span> <br>
