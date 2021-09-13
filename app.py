@@ -49,6 +49,7 @@ def register():
         # put the new user into 'session' through cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful - Welcome to Level 7!")
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -66,7 +67,9 @@ def sign_in():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash(
-                        "Welcome Back Agent {}".format(request.form.get("username")))
+                        "Welcome back Agent {}".format(request.form.get("username")))
+                    return redirect(url_for(
+                         "profile", username=session["user"]))
             else:
                 # Incorrect password
                 flash("Incorrect Username and/or Password")
@@ -78,6 +81,15 @@ def sign_in():
             return redirect(url_for("sign_in"))
 
     return render_template("sign_in.html")
+
+
+# User Profile page
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 # Movies Page

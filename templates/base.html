@@ -26,6 +26,7 @@
             <li><a href="{{ url_for('landing') }}">Home</a></li>
             <li><a href="{{ url_for('get_movies') }}">Movies</a></li>
             <li><a href="{{ url_for('get_television') }}">TV Show</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
             <li><a href="#">Sign Out</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>          
@@ -39,6 +40,7 @@
         <li><a href="{{ url_for('landing') }}"><i class="uil uil-estate red-text text-darken-2"></i>Home</a></li>
         <li><a href="{{ url_for('get_movies') }}"><i class="uil uil-film red-text text-darken-2"></i>Movies</a></li>
         <li><a href="{{ url_for('get_television') }}"><i class="uil uil-tv-retro red-text text-darken-2"></i>TV Show</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-mask red-text text-darken-2"></i>Profile</a></li>
         <li><a href="{{ url_for('sign_in') }}"><i class="fas fa-mask red-text text-darken-2"></i>Sign In</a></li>
         <li><a href="#">Sign Out</a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li> 
