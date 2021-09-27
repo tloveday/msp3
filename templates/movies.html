@@ -17,7 +17,12 @@
                                 <span>Release Date:</span> {{ movie.release_date }} <br>
                                 <span>Character Focus:</span> {{ movie.focus }}<br>
                                 <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
-                                <a href="#" class="btn blue"> <i class="far fa-edit right"></i>Re-View</a>
+                                <!-- Disable review link for unreleased movies-->
+                                {% if movie.released == "yes" %}
+                                    <a href="#" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                                {% else %}
+                                    <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                                {% endif %}
                             </div>
                     </div>
                 </div>
@@ -33,7 +38,11 @@
                             <span>Release Date:</span> {{ movie.release }} <br>
                             <span>Character Focus:</span> {{ movie.focus }}<br>
                             <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
-                            <a href="#" class="btn blue"> <i class="far fa-edit right"></i>Re-View</a>
+                            {% if movie.released == "yes" %}
+                                    <a href="#" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                            {% else %}
+                                    <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                            {% endif %}
                         </div>
                     </div> 
                 </div>  
