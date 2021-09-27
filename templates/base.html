@@ -39,7 +39,7 @@
     
       <!-- Links in Mobile Collapsable Navbar-->
       <ul class="sidenav red-text text-darken-2" id="mobile-demo">
-        <li><h4 class="center-align"> M C RE-VUE</h4></li>
+        <li><img class="brand-logo" src="static/images/site/brand.png" alt=""></li>
         <li><a href="{{ url_for('landing') }}"><i class="uil uil-estate red-text text-darken-2"></i>Home</a></li>
         <li><a href="{{ url_for('get_movies') }}"><i class="uil uil-film red-text text-darken-2"></i>Movies</a></li>
         <li><a href="{{ url_for('get_television') }}"><i class="uil uil-tv-retro red-text text-darken-2"></i>TV Show</a></li>
@@ -72,7 +72,7 @@
     </main>
 
     <!-- Source taken from Materliaze and customised-->
-    <footer class="page-footer red darken-1">
+    <footer class="page-footer black">
         <div class="container black valign-wrapper">
           <div class="row">
             <div class="col l6 s12">
@@ -81,21 +81,32 @@
               <p class="right small">Director Nick Fury, S.H.I.E.L.D</p></blockquote>
             </div>
             <div class="col l4 offset-l2 s12 black white-text">
+              <!-- Social Media-->
               <h4>Contact us:</h4>
               <ul class="center-align">
-                <li><a class="social-media btn-floating btn-large red" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a class="social-media btn-floating btn-large red" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a class="social-media btn-floating btn-large red" href="https://www.discord.com/" target="_blank"><i class="fab fa-discord"></i></a></li>
-                <li><a class="social-media btn-floating btn-large red" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                <li><a class="social-media btn-floating btn-large red" href="https://www.reddit.com/" target="_blank"><i class="fab fa-reddit-alien"></i></a></li>
+                <li><a class="social-media btn-floating btn-large btn-red" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="social-media btn-floating btn-large btn-red" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a class="social-media btn-floating btn-large btn-red" href="https://www.discord.com/" target="_blank"><i class="fab fa-discord"></i></a></li>
+                <li><a class="social-media btn-floating btn-large btn-red" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a class="social-media btn-floating btn-large btn-red" href="https://www.reddit.com/" target="_blank"><i class="fab fa-reddit-alien"></i></a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container center-align">
-          © Copyright 2021 <br> Images Belong To Marvel Entertainent Inc, owned by The Walt Disney Company.<br>
-          All Opinions exprssed are those of the  reviewers and do not represent those of M C RE-VUE.
+        <div class="row">
+          <div class="col s12 m6 footer-copyright">
+            <div class="container center-align">
+              <!-- Copyright and Opnion Disclaimer-->
+              © Copyright 2021 <br> Images belong to Marvel Entertainent Inc, owned by The Walt Disney Company.<br>
+              All Opinions expressed are those of the reviewers and do not represent those of MC REVUE.
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="container center-align">
+              <!-- Fictional Company Name-->
+              Site designed by<br>
+              <img class="company" src="static/images/site/company.png" alt="">
+            </div>
           </div>
         </div>
     </footer>

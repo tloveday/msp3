@@ -16,19 +16,27 @@
 .btn-red{
     background-color: #ed1d24;
 }
-/*  ==== Footer ==== */
+/*  ==== Header ==== */
 .brand-logo{
     margin: 5px;
-    padding-left: 10px;
-    height: 56px;
-    width: 150 px;
+    padding-left: 50px;
+    padding-bottom: 5px;
+    height: 65px;
+    width: 300 px;
 }
+
 /*  ==== Footer ==== */
 ul li{
     display: inline-block;
 }
 .social-media{
     margin-left: 2px;
+}
+
+.company{
+    margin: 5px;
+    height: 75px;
+    width: 75 px;
 }
 
 /*  ==== Buttons ==== */
