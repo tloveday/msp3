@@ -67,7 +67,8 @@ def sign_in():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash(
-                        "Welcome back Agent {}".format(request.form.get("username")))
+                        "Welcome back Agent {}".format(
+                            request.form.get("username")))
                     return redirect(url_for(
                          "profile", username=session["user"]))
             else:
@@ -116,6 +117,12 @@ def get_movies():
 def get_television():
     tvshows = mongo.db.tvshows.find()
     return render_template("tvshows.html", tvshows=tvshows)
+
+
+# Review Form
+@app.route("/review")
+def review():
+    return render_template("review.html")
 
 
 if __name__ == '__main__':

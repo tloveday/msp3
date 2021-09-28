@@ -19,9 +19,9 @@
                                 <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
                                 <!-- Disable review link for unreleased movies-->
                                 {% if movie.released == "yes" %}
-                                    <a href="#" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                                    <a href="{{ url_for('review') }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
                                 {% else %}
-                                    <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                                    <a href="{{ url_for('review') }}" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
                                 {% endif %}
                             </div>
                     </div>
