@@ -50,10 +50,18 @@ ul li{
     max-height: 400px;
 }
 
-
 .card-tv{
     min-height: 250px;
     max-height: 250px;
+}
+
+.card-home{
+    max-width: 350px;
+    margin-right: 40px;
+    margin-left: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    align-content: center;
 }
 /*  ==== Images ==== */
 

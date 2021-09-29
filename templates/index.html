@@ -4,13 +4,13 @@
 
     <h2 class="center-align red-text">Welcome to M C Revue your home to review the MCU</h2>
     <div class="row">
-        <div class="card col s12 m6 center-align">
+        <div class="card card-home col s12 m6 center-align">
             Check Out the MCU movies
             <div class="row">
                 <a class="btn btn-red btn-large" href="{{ url_for('get_movies') }}">Here</a>
             </div>
         </div>
-        <div class="card col s12 m6 center-align">
+        <div class="card card-home col s12 m6 center-align">
             <span>   Check Out the MCU television shows</span>
             <div class="row">
                 <div class="col s12 m8 offset-m2">
@@ -19,8 +19,12 @@
             </div>
         </div>
     </div>
-    
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dolorem minima impedit error eum fugit in ab. Nam eveniet provident laborum et velit. Doloribus minima temporibus assumenda provident rerum itaque?</div>
+    <div class="row">
+        <div class="card col s12 m6 offset-m3">
+            <!--Search Bar-->
+        </div>
+    </div>
+
     
 {% endblock %}
 {% block footer %}
