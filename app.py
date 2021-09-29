@@ -119,9 +119,19 @@ def get_television():
     return render_template("tvshows.html", tvshows=tvshows)
 
 
-# Review Form
-@app.route("/review")
+# Review Forms
+@app.route("/review", methods=["GET", "POST"])
 def review():
+    if request.method == "POST":
+        review = {
+            "headline": request.form.get("headline"),
+            "review": request.form.get("review"),
+            "written_by": session["user"],
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review Added")
+        return redirect(url_for('get_movies'))
+
     return render_template("review.html")
 
 
