@@ -4,49 +4,28 @@
     <div>
         <div class="row">
             {% for movie in movies %}
-                {% if movie.poster == "yes" %}
                 <!-- Source taken from Materliaze and customised-->
-                <!-- Movies released/close to release and have theatrical posters-->
-                    <div class="col s12 m4">
-                        <div class="card horizontal center-align valign-wrapper">
-                            <div class="card-image valign-wrapper">
-                                <img class="poster"  src="static/images/movies/{{ movie.code }}.png" alt="{{ movie.title }}">
-                            </div>
-                            <div class="card-stacked">
-                                <h5 class="card-title flow-text red-text text-darken-2">{{ movie.title }}</h5>
-                                <span>Release Date:</span> {{ movie.release_date }} <br>
-                                <span>Character Focus:</span> {{ movie.focus }}<br>
-                                <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
-                                <!-- Disable review link for unreleased movies-->
-                                {% if movie.released == "yes" %}
-                                    <a href="{{ url_for('review') }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
-                                {% else %}
-                                    <a href="{{ url_for('review') }}" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
-                                {% endif %}
-                            </div>
-                    </div>
-                </div>
-                {% else %}
-                <!-- Movies that do not have theatrical posters-->
-                <div class="col s12 m4 l3">
-                    <div class="card center-align">
-                        <div class="card-image">
-                            <img class="movie-logo"  src="static/images/movies/{{ movie.code }}.png" alt="{{ movie.title }}">
+                <div class="col s12 m6 l4 ">
+                    <div class="card card-movie horizontal">
+                      <div class="card-image">
+                        <img class="poster v-align center-align"  src="static/images/movies/{{ movie.code }}.png" alt="{{ movie.title }}">
+                      </div>
+                      <div class="card-stacked">
+                        <div class="card-content">
+                            <h6 class="red-text text-darken-4 center-align">{{ movie.title }}</h6>   
+                            <span>Release Date:</span><br><span>{{ movie.release_date }}</span>
                         </div>
-                        <div class="card-stacked">
-                            <span class="card-title flow-text red-text text-darken-2">{{ movie.title }}</span><br>
-                            <span>Release Date:</span> {{ movie.release }} <br>
-                            <span>Character Focus:</span> {{ movie.focus }}<br>
+                        <div class="card-action center-align">
                             <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
                             {% if movie.released == "yes" %}
-                                    <a href="#" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
-                            {% else %}
-                                    <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
-                            {% endif %}
+                            <a href="{{ url_for('review') }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                        {% else %}
+                            <a href="{{ url_for('review') }}" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                        {% endif %}
                         </div>
-                    </div> 
-                </div>  
-            {% endif %} 
+                      </div>
+                    </div>
+                </div>
            {% endfor %}
         </div> 
     </div>

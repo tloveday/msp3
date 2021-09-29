@@ -45,11 +45,11 @@ ul li{
 }
 
 /*  ==== Cards ==== */
-.card{
-    
+.card-movie{
     min-height: 350px;
-    max-height: 350px;
+    max-height: 400px;
 }
+
 
 .card-tv{
     min-height: 250px;
@@ -64,7 +64,8 @@ ul li{
 }
 
 .poster{
-    max-height: 250px;
+    max-height: 300px;
+    max-width: 100px;
     margin: 5px;
 }
 .movie-logo{
