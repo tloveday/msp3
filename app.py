@@ -140,7 +140,7 @@ def review(movie_id):
             "headline": request.form.get("headline"),
             "review": request.form.get("review"),
             "rating": request.form.get("rating"),
-            "written_by": session["user"],
+            "reviewed_by": session["user"],
         }
         mongo.db.reviews.insert_one(review)
         flash("Review Added")
