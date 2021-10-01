@@ -4,7 +4,7 @@
 Review
 <div class="row">
     <div class="col s8 offset-s2">
-        <form class="card-panel" method="POST" action="{{ url_for('review')}}">
+        <form class="card-panel" method="POST" action="{{ url_for('review', movie_id=movie_id)}}">
             <!-- Review Headline-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
@@ -22,6 +22,7 @@ Review
                         <i class="rating-star far fa-star"></i>
                         <i class="rating-star far fa-star"></i>
                         <i class="rating-star far fa-star"></i>
+                        <input name="rating" type="hidden" id="review_counter"/>
                     </div>
                 </div>
             </div>

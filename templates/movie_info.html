@@ -23,9 +23,9 @@
             </div>
             <div class="card-action center-align">
                 {% if movie.released == "yes" %}
-                    <a href="{{ url_for('review') }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                    <a href="{{ url_for('review', movie_id=movie._id) }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
                 {% else %}
-                    <a href="{{ url_for('review') }}" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                    <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
                 {% endif %}
                     <a href="{{ url_for('get_movies') }}" class="btn"> <i class="far fa-reply right"></i>Back</a>
             </div>
@@ -43,7 +43,7 @@
                                 I am convenient because I require little markup to use effectively.
                         </p>
                         <p class="center-align">Star Rating</p>
-                        <span>Reviewed by:</span> <span>{reviews.reviewer}</span>
+                        <span>Reviewed by:</span> <span>{{review.reviewer}}</span>
                     </div>
                     {% if session.user %}
                         <div class="card-action center-align">
@@ -51,7 +51,7 @@
                             <a class="btn btn-red" href="#">Delete</a>
                             {% else %}
                         </div>
-                    {% endif}
+                    {% endif%}
             </div>
         </div>
     </div>

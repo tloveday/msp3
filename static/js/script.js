@@ -12,8 +12,8 @@ var clicked;
 
 
 $('.rating-star').click(function(){
+    rating = $('i.rating-hover').length;
     $('.rating-star').removeClass('rating-hover rating-picked');
-    
     $(this).removeClass('far').addClass('rating-picked fas');
     $(this).prevAll().addClass('rating-picked fas');
     $(this).nextAll().addClass('far');
@@ -24,6 +24,8 @@ $('.rating-star').click(function(){
     clicked == $($('.rating-star').get(a));
 
     $(clicked).data('clicked', true);
+    $('#review_counter').val(rating);
+    console.log('rated ' + rating);
 
 });
 

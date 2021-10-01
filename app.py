@@ -119,35 +119,34 @@ def get_television():
     return render_template("tvshows.html", tvshows=tvshows)
 
 
-#  PROBLEM
 # Movie Information Page
 @app.route('/movieinfo/<movie_id>')
 def movieinfo(movie_id):
     # Gets movie info from db
-    movie_id = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
+    movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
     review = list(mongo.db.reviews.find())
     related_review = list(mongo.db.reviews.find({'movie_id': movie_id}))
 
-    return render_template('movie_info.html', movie_id=movie_id, review=review,
+    return render_template('movie_info.html', movie=movie, review=review,
      related_review=related_review)
 
 
 # Review Forms
-@app.route("/review", methods=["GET", "POST"])
-def review():
+@app.route("/review/<movie_id>", methods=["GET", "POST"])
+def review(movie_id):
     if request.method == "POST":
         review = {
-            # Movie ID
+            "movie": movie_id,
             "headline": request.form.get("headline"),
             "review": request.form.get("review"),
-            # Rating in Star
+            "rating": request.form.get("rating"),
             "written_by": session["user"],
         }
         mongo.db.reviews.insert_one(review)
         flash("Review Added")
         return redirect(url_for('get_movies'))
 
-    return render_template("review.html")
+    return render_template("review.html", movie_id=movie_id)
 
 
 if __name__ == '__main__':
