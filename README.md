@@ -133,11 +133,11 @@ To deploy your application to Heroku
 8. Then add your repository name, search and select the correct repository
 9. Open the settings tab and select 'Reveal Config Vars'
 10. You will need to add here, any secret or hidden variables that are not visable to Heroku from your GitHub repository.
->IP : "0.0.0.0"
->PORT : "5000"
->MONGO_DBNAME : "(Insert the database name you wish to connect to)"
->MONGO_URI : "(Insert URI)" - The URI can be found on MongoDB under Clusters, "Connect" > "Connect your application" and replacing the generic values with your user name and password
->SECRET_KEY : "(Insert custom secret key you created in configuration to keep the sessions secure)
+>    - IP : "0.0.0.0"
+>   - PORT : "5000"
+>    - MONGO_DBNAME : "(Insert the database name you wish to connect to)"
+>   - MONGO_URI : "(Insert URI)" - The URI can be found on MongoDB under Clusters, "Connect" > "Connect your application" and replacing the generic values with your user name and password
+>   - SECRET_KEY : "(Insert custom secret key you created in configuration to keep the sessions secure)
 11. Hide Con Fig Vars and reopen the deploy tab
 12. Under automatic deployment enable automatic deployment
 13. In manual deploy section select the branch you wish to deploy from the drop down and click deploy branch

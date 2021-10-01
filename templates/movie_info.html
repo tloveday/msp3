@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card-panel">
+                <h3 class="center-align red-text text-darken-2">
+                    {{movie.title}}'s
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m8 offset-m2">
+        <div class="card card-movie horizontal">
+          <div class="card-image">
+            <img class="poster center-align"  src="static/images/movies/{{ movie.code }}.png" alt="{{ movie.title }}">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">  
+                <span>Release Date:</span><br><span>{{ movie.release_date }}</span>
+                <!-- Movie info-->
+                <span></span>
+            </div>
+            <div class="card-action center-align">
+                {% if movie.released == "yes" %}
+                <a href="{{ url_for('review') }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+            {% else %}
+                <a href="{{ url_for('review') }}" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+            {% endif %}
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="row center-align">
+        <h4 class="red-text text-darken-2">Reviews</h4>
+        <div class="col s12 m4">
+            <div class="card card-review">
+                <span class="center-align card-title">Card Title</span>
+                    <div class="card-content left-align">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.
+                        </p>
+                        <p class="center-align">Star Rating</p>
+                    </div>
+                    <div class="card-action center-align">
+                        <a class="btn" href="#">Edit</a>
+                        <a class="btn btn-red" href="#">Delete</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+            <!-- Will contain reviews of movies-->
+            <!-- Will contain reviews of TV shows-->
+    
+{% endblock %}
+{% block footer %}
+{% endblock %}

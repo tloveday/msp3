@@ -16,8 +16,11 @@
                             <span>Release Date:</span><br><span>{{ movie.release_date }}</span>
                         </div>
                         <div class="card-action center-align">
-                            <a href="#" class="btn"> <i class="far fa-eye right"></i>View</a>
+                            <!-- Take to movie information page-->
+                            <!-- PROBLEM-->
+                            <a href="{{ url_for('movieinfo', movie_id=movie_id) }}" class="btn"> <i class="far fa-eye right"></i>View</a>
                             {% if movie.released == "yes" %}
+                            <!-- Take User to review page if movie is classed as released-->
                             <a href="{{ url_for('review') }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
                         {% else %}
                             <a href="{{ url_for('review') }}" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
