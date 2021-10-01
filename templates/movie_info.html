@@ -23,10 +23,11 @@
             </div>
             <div class="card-action center-align">
                 {% if movie.released == "yes" %}
-                <a href="{{ url_for('review') }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
-            {% else %}
-                <a href="{{ url_for('review') }}" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
-            {% endif %}
+                    <a href="{{ url_for('review') }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                {% else %}
+                    <a href="{{ url_for('review') }}" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                {% endif %}
+                    <a href="{{ url_for('get_movies') }}" class="btn"> <i class="far fa-reply right"></i>Back</a>
             </div>
           </div>
         </div>
@@ -36,22 +37,25 @@
         <h4 class="red-text text-darken-2">Reviews</h4>
         <div class="col s12 m4">
             <div class="card card-review">
-                <span class="center-align card-title">Card Title</span>
+                <span class="center-align card-title">Headline</span>
                     <div class="card-content left-align">
                         <p>I am a very simple card. I am good at containing small bits of information.
                                 I am convenient because I require little markup to use effectively.
                         </p>
                         <p class="center-align">Star Rating</p>
+                        <span>Reviewed by:</span> <span>{reviews.reviewer}</span>
                     </div>
-                    <div class="card-action center-align">
-                        <a class="btn" href="#">Edit</a>
-                        <a class="btn btn-red" href="#">Delete</a>
-                    </div>
+                    {% if session.user %}
+                        <div class="card-action center-align">
+                            <a class="btn" href="#">Edit</a>
+                            <a class="btn btn-red" href="#">Delete</a>
+                            {% else %}
+                        </div>
+                    {% endif}
             </div>
         </div>
     </div>
-            <!-- Will contain reviews of movies-->
-            <!-- Will contain reviews of TV shows-->
+
     
 {% endblock %}
 {% block footer %}
