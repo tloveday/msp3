@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card-panel">
+                <h3 class="center-align red-text text-darken-2">
+                    {{tvshows.title}}
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m8 offset-m2">
+        <div class="card card-movie horizontal">
+          <div class="card-image">
+            <img class="poster center-align"  src="static/images/movies/{{ tvshows.code }}.png" alt="{{ tvshows.title }}">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">  
+                <span>Release Date:</span><br><span>{{ tvshows.release_date }}</span>
+                <span>Seasons:</span><br><span>{{ tvshows.seasons }}</span>
+                <span>Number of Episodes:</span><br><span>{{ tvshows.episodes }}</span>
+                <!-- Movie info-->
+                <span></span>
+            </div>
+            <div class="card-action center-align">
+                {% if tvshows.released == "yes" %}
+                    <a href="{{ url_for('tvreview', tvshows_id=tvshows._id) }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                {% else %}
+                    <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                {% endif %}
+                    <a href="{{ url_for('get_movies') }}" class="btn"> <i class="far fa-arrow-alt-circle-left right"></i>Back</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% for review in reviews %}
+        <div class="row center-align">
+            <h4 class="red-text text-darken-2">{{ tvreviews.headline }}</h4>
+            <div class="col s12 m4">
+                <div class="card card-review">
+                    <div class="card-content left-align">
+                        <p>{{ tvreviews.review }}</p>
+                        <p class="center-align">{{tvreviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                        <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
+                    </div>
+                    {% if session.user %}
+                        <div class="card-action center-align">
+                            <a class="btn" href="#">Edit</a>
+                            <a class="btn btn-red" href="#">Delete</a>
+                    {% else %}
+                        </div>
+                    {% endif%}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -120,7 +120,7 @@ def get_television():
 
 
 # Movie Information Page
-@app.route('/movieinfo/<movie_id>')
+@app.route("/movieinfo/<movie_id>")
 def movieinfo(movie_id):
     # Gets movie info from db
     movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
@@ -131,7 +131,19 @@ def movieinfo(movie_id):
      related_review=related_review)
 
 
+@app.route("/tvinfo/<tvshows_id>")
+def tvinfo(tvshows_id):
+    # Gets TV info from db
+    tvshows = mongo.db.tvshows.find_one({'_id': ObjectId(tvshows_id)})
+    review = list(mongo.db.tvreviews.find())
+    related_review = list(mongo.db.tvreviews.find({'tvshows_id': tvshows_id}))
+
+    return render_template('television_info.html', tvshows=tvshows, review=review,
+     related_review=related_review)
+
+
 # Review Forms
+# Movie
 @app.route("/review/<movie_id>", methods=["GET", "POST"])
 def review(movie_id):
     if request.method == "POST":
@@ -147,6 +159,24 @@ def review(movie_id):
         return redirect(url_for('get_movies'))
 
     return render_template("review.html", movie_id=movie_id)
+
+
+# TV Show
+@app.route("/tvreview/<tvshows_id>", methods=["GET", "POST"])
+def tvreview(tvshows_id):
+    if request.method == "POST":
+        review = {
+            "show": tvshows_id,
+            "headline": request.form.get("headline"),
+            "review": request.form.get("review"),
+            "rating": request.form.get("rating"),
+            "reviewed_by": session["user"],
+        }
+        mongo.db.tvreviews.insert_one(review)
+        flash("Review Added")
+        return redirect(url_for('get_television'))
+
+    return render_template("tvreview.html", tvshows_id=tvshows_id)
 
 
 if __name__ == '__main__':
