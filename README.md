@@ -22,12 +22,20 @@ Wireframes for
 
 ### New User
 - View Movie and Television reviews
+- Create an account to register reviews.
 - Create movie and Television reviews for MCU Movies and Televison Shows
 
 ### Returning User
-- Create reviews for MCU products  viewed
+- Create reviews for MCU products viewed
 - View reviews for MCU products.
 - Edit and delete personal reviews for MCU products 
+
+### Company Goal
+- Users can create accounts
+- Users create reviews for MCU products released
+- Users can access reviews made by other users for MCU products.
+- Users can amend and delete personal reivews for the MCU Products
+- Administrators (Admin) can edit MCU product information to keep it up to date 
 
 ## Design
 ### Colour schemes
@@ -84,18 +92,32 @@ CSS was directly imput into (https://jigsaw.w3.org/css-validator/) with results 
 ### User goals
 
 #### New User
+- Create reviews for MCU products viewed
+    - Users are able to easily create accounts to review MCU Telvision and Movie 
 - View Movie and Television reviews
-    - OUTCOME
+    - Users can view reviews of Television Shows and Movies.
 - Create movie and Television reviews for MCU Movies and Televison Shows
-    - OUTCOME
+    - Users can create reviews for Television Shows and Movies.
 
 #### Returning User
 - Create reviews for MCU products viewed
-    - OUTCOME
+    - Users can create reviews for MCU products
 - View reviews for MCU products.
-    - OUTCOME
+    - users can see a variety of reviews fo MCU Products however this is done with a NUmber rating - not the 5 stars used in creating the review.
 - Edit and delete personal reviews for MCU products
-    - OuTCOME
+    - Users can edit and and delete personal reviews for MCU products
+
+#### Company Goal
+- Users can create accounts
+    - Users can create aand log into individual accounts
+- Users create reviews for MCU products released
+    - Users can only review MCU prodcts that have be released
+- Users can access reviews made by other users for MCU products.
+    - Outcome
+- Users can amend and delete personal reivews for the MCU Products.
+    - Users are able to edit personal reviews should thier opinions chnge over time.
+- Administrators (Admin) can edit MCU product information to keep informaton up to date
+    - Outcome
 
 
 ### Further Testing
@@ -111,12 +133,13 @@ The website was viewed on a variety of devices including desktop, laptop and mob
 
 
 ### Further Development
-
-
+With greater undestanding and confidence in my abilities I would have liked to find ways to get the rating system to show up in readable reviews as stars. however due to limitations and time this was unable to be completed. 
+With better understanding into defensive programming I would like to have built a more robust application.
 
 
 ## Bugs
-All images stored in the Static/Images folders Images not showing in both movie and television show information pages with the error code 404 emerging. -
+All images stored in the Static/Images folders Images not showing in both movie and television show information pages with the error code 404 emerging. - This was corrected and was a result of oversight. /static/images/... location.
+
 
 ## Deployment
 ### Heroku
