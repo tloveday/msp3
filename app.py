@@ -225,6 +225,22 @@ def edit_tvreview(tvreviews_id):
     return render_template("edit_tv_review.html", tvreviews=tvreview)
 
 
+# Delete Movie review
+@app.route("/delete_moviereview/<reviews_id>")
+def delete_moviereview(reviews_id):
+    mongo.db.reviews.remove({"_id": ObjectId(reviews_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for('get_movies'))
+
+
+# Delete TV Review
+@app.route("/delete_tvreview/<tvreviews_id>")
+def delete_tvreview(tvreviews_id):
+    mongo.db.tvreviews.remove({"_id": ObjectId(tvreviews_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for('get_television'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
