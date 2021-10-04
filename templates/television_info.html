@@ -20,9 +20,11 @@
                 <span>Release Date:</span> <span>{{ tvshows.release }}</span><br>
                 <span>Seasons:</span> <span>{{ tvshows.seasons }}</span><br>
                 <span>Number of Episodes:</span> <span>{{ tvshows.episodes }}</span><br>
-                <span>Synopsis:</span><br><span>{{ tvshows.plot }}</span>
-                <!-- Movie info-->
-                <span></span>
+                <div>
+                    <p>Synposis:</p>
+                    <blockquote>{{ tvshows.plot}}</blockquote>
+                </div>
+                
             </div>
             <div class="card-action center-align">
                 {% if tvshows.released == "yes" %}
@@ -35,6 +37,7 @@
           </div>
         </div>
     </div>
+    <!-- User Reviews of TV Show-->
     {% for review in reviews %}
         <div class="row center-align">
             <h4 class="red-text text-darken-2">{{ tvreviews.headline }}</h4>
@@ -45,6 +48,7 @@
                         <p class="center-align">{{tvreviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
                         <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                     </div>
+                    <!-- If author of review Allow them options to edit delete review.-->
                     {% if session.user %}
                         <div class="card-action center-align">
                             <a class="btn" href="{{ url_for('edit_tvreview', tvreviews_id) }}">Edit</a>

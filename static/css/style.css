@@ -1,12 +1,30 @@
 /*  ==== Font ==== */
 @import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400&family=Poppins&family=Shadows+Into+Light&display=swap');
 
+/*  ==== Background ==== */
+body{
+    background-image: url();
+}
+
 /*  ==== Text ==== */
 .card-title{
     font-family: 'Poppins', sans-serif;
 }
-.result{
+
+span{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,h2, h3, h4, h5{
     font-family:  'Marvel', sans-serif;
+}
+
+li{
+    font-family:  'Poppins', sans-serif;
+}
+
+.btn{
+    font-family:  'Poppins', sans-serif; 
 }
 
 .text-shadow{

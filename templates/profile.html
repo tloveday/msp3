@@ -21,7 +21,7 @@
                     <div class="card-content left-align">
                         <p>{{ reviews.review }}</p>
                         <p class="center-align">{{reviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
-                        <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
+                        <span>Reviewed by:</span> <span>{{ reviews.reviewed_by }}</span>
                     </div>
                         <div class="card-action center-align">
                             <a class="btn" href="{{ url_for('edit_moviereview', reviews_id) }}">Edit</a>
@@ -35,18 +35,18 @@
     <!-- Television reviews-->
     <div class="row center-align">
         <h4 class="red-text text-darken-2">Television Reviews</h4>
-        {% for review in reviews %}
+        {% for tvreview in tvreviews %}
         <div class="row center-align">
-            <h4 class="red-text text-darken-2">{{ reviews.headline }}</h4>
+            <h4 class="red-text text-darken-2">{{ tvreviews.headline }}</h4>
             <div class="col s12 m4">
                 <div class="card card-review">
                     <div class="card-content left-align">
-                        <p>{{ reviews.review }}</p>
-                        <p class="center-align">{{reviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
-                        <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
+                        <p>{{ tvreviews.review }}</p>
+                        <p class="center-align">{{tvreviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                        <span>Reviewed by:</span> <span>{{ tvreviews.reviewed_by }}</span>
                     </div>
                         <div class="card-action center-align">
-                            <a class="btn" href="#">Edit</a>
+                            <a class="btn" href="{{ url_for('edit_tvreview', tvreviews_id) }}">Edit</a>
                             <a class="btn btn-red" href="#">Delete</a>
                         </div>
                 </div>
@@ -54,8 +54,6 @@
         </div>
     {% endfor %}
     </div>
-            <!-- Will contain reviews of movies-->
-            <!-- Will contain reviews of TV shows-->
     
 {% endblock %}
 {% block footer %}

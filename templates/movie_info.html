@@ -17,11 +17,10 @@
           </div>
           <div class="card-stacked">
             <div class="card-content">  
-                <span>Release Date:</span><br><span>{{ movie.release_date }}</span>
-                <span>Synopsis:</span>
+                <span>Release Date:</span> <span>{{ movie.release_date }}</span>
                 <div>
                     <p>Synposis:</p>
-                    <p>{{ movie.plot}}</p>
+                    <blockquote>{{ movie.plot}}</blockquote>
                 </div>
                 <!-- Movie info-->
                 <span></span>
@@ -37,6 +36,7 @@
           </div>
         </div>
     </div>
+    <!-- User reviews of Movie-->
     {% for review in reviews %}
         <div class="row center-align">
             <h4 class="red-text text-darken-2">{{ reviews.headline }}</h4>
@@ -47,6 +47,7 @@
                         <p class="center-align">{{reviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
                         <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                     </div>
+                    <!-- If author of review Allow them options to edit delete review.-->
                     {% if session.user %}
                         <div class="card-action center-align">
                             <a class="btn" href="{{ url_for('edit_moviereview', reviews_id) }}">Edit</a>

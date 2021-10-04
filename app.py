@@ -132,20 +132,20 @@ def movieinfo(movie_id):
         related_review=related_review)
 
 
+# TV Information Page
 @app.route("/tvinfo/<tvshows_id>")
 def tvinfo(tvshows_id):
     # Gets TV info from db
     tvshows = mongo.db.tvshows.find_one({'_id': ObjectId(tvshows_id)})
-    review = list(mongo.db.tvreviews.find())
+    tvreview = list(mongo.db.tvreviews.find())
     related_review = list(mongo.db.tvreviews.find({'tvshows_id': tvshows_id}))
 
     return render_template(
-        'television_info.html', tvshows=tvshows, review=review,
+        'television_info.html', tvshows=tvshows, tvreview=tvreview,
         related_review=related_review)
 
 
-# Review Forms
-# Movie
+# Movie Review Forms
 @app.route("/review/<movie_id>", methods=["GET", "POST"])
 def review(movie_id):
     if request.method == "POST":
@@ -163,7 +163,7 @@ def review(movie_id):
     return render_template("review.html", movie_id=movie_id)
 
 
-# TV Show
+# TV Show Review Form
 @app.route("/tvreview/<tvshows_id>", methods=["GET", "POST"])
 def tvreview(tvshows_id):
     if request.method == "POST":
