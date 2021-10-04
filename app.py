@@ -138,8 +138,9 @@ def tvinfo(tvshows_id):
     review = list(mongo.db.tvreviews.find())
     related_review = list(mongo.db.tvreviews.find({'tvshows_id': tvshows_id}))
 
-    return render_template('television_info.html', tvshows=tvshows, review=review,
-     related_review=related_review)
+    return render_template(
+        'television_info.html', tvshows=tvshows, review=review,
+         related_review=related_review)
 
 
 # Review Forms
@@ -165,14 +166,14 @@ def review(movie_id):
 @app.route("/tvreview/<tvshows_id>", methods=["GET", "POST"])
 def tvreview(tvshows_id):
     if request.method == "POST":
-        review = {
+        tvreview = {
             "show": tvshows_id,
             "headline": request.form.get("headline"),
             "review": request.form.get("review"),
             "rating": request.form.get("rating"),
             "reviewed_by": session["user"],
         }
-        mongo.db.tvreviews.insert_one(review)
+        mongo.db.tvreviews.insert_one(tvreview)
         flash("Review Added")
         return redirect(url_for('get_television'))
 

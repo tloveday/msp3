@@ -17,7 +17,6 @@
                         </div>
                         <div class="card-action center-align">
                             <!-- Take to movie information page-->
-                            <!-- PROBLEM-->
                             <a href="{{ url_for('movieinfo', movie_id=movie._id) }}" class="btn"> <i class="far fa-eye right"></i>View</a>
                             {% if movie.released == "yes" %}
                             <!-- Take User to review page if movie is classed as released-->
