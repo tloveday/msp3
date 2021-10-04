@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Write your review.</h3>
+<div class="row">
+    <div class="col s8 offset-s2">
+        <form class="card-panel" method="POST" action="{{ url_for('edit_tvreview', tvreviews_id=tvreviews_id)}}">
+            <!-- Review Headline-->
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="headline" name="headline" type="text" value="{{ tvreviews.headline }}" data-length="30">
+                    <label for="headline">Headline</label>
+                </div>
+            </div>
+            <!-- Star Rating-->
+            <div class="row center-align">
+                <div class="col s4 offset-s4">
+                    <div class="row rating">
+                        <label class="left-align" for="star-rating">Star Rating</label><br>
+                        <i class="rating-star far fa-star"></i>
+                        <i class="rating-star far fa-star"></i>
+                        <i class="rating-star far fa-star"></i>
+                        <i class="rating-star far fa-star"></i>
+                        <i class="rating-star far fa-star"></i>
+                        <input name="rating" type="hidden" id="review_counter"/>
+                    </div>
+                </div>
+            </div>
+            <!-- Verbal Review-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <textarea id="review" name="review" class="materialize-textarea" data-length="560">{{- tvreviews.review -}}</textarea>
+                    <label for="review">Review</label>
+              </div> 
+            </div>
+            <!--Submit Button-->
+            <div class="row">
+                <a href="{{ url_for('profile', username=session['user']) }}" class="btn large">Cancel</a>
+                <div class="col s8 offset-s2 center-align">
+                    <button type="submit" class="btn-large btn-red">
+                        Edit Review
+                    </button>
+
+                </div>
+            </div>
+
+        </form>      
+    </div>
+</div>
+        
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

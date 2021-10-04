@@ -127,8 +127,9 @@ def movieinfo(movie_id):
     review = list(mongo.db.reviews.find())
     related_review = list(mongo.db.reviews.find({'movie_id': movie_id}))
 
-    return render_template('movie_info.html', movie=movie, review=review,
-     related_review=related_review)
+    return render_template(
+        'movie_info.html', movie=movie, review=review,
+        related_review=related_review)
 
 
 @app.route("/tvinfo/<tvshows_id>")
@@ -140,7 +141,7 @@ def tvinfo(tvshows_id):
 
     return render_template(
         'television_info.html', tvshows=tvshows, review=review,
-         related_review=related_review)
+        related_review=related_review)
 
 
 # Review Forms
@@ -178,6 +179,43 @@ def tvreview(tvshows_id):
         return redirect(url_for('get_television'))
 
     return render_template("tvreview.html", tvshows_id=tvshows_id)
+
+
+# Edit Movie Reviews
+@app.route("/edit_moviereview/<reviews_id>", methods=["GET", "POST"])
+def edit_moviereview(reviews_id):
+    if request.method == "POST":
+        submit = {
+            "headline": request.form.get("headline"),
+            "review": request.form.get("review"),
+            "rating": request.form.get("rating"),
+            "reviewed_by": session["user"],
+        }
+        mongo.db.reviews.update({"_id": ObjectId(reviews_id)}, submit)
+        flash("Review Successfully Edited")
+        return redirect(url_for('get_movies'))
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(reviews_id)})
+    return render_template("edit_movie_review.html", review=review)
+
+
+# Edit TV Review
+@app.route("/edit_tvreview/<tvreviews_id>", methods=["GET", "POST"])
+def edit_tvreview(tvreviews_id):
+    if request.method == "POST":
+        submitreview = {
+            "headline": request.form.get("headline"),
+            "review": request.form.get("review"),
+            "rating": request.form.get("rating"),
+            "reviewed_by": session["user"],
+        }
+        mongo.db.tvreviews.update({"_id": ObjectId(
+            tvreviews_id)}, submitreview)
+        flash("Review Successfully Edited")
+        return redirect(url_for('get_television'))
+
+    tvreview = mongo.db.tvreviews.find_one({"_id": ObjectId(tvreviews_id)})
+    return render_template("edit_tv_review.html", tvreview=tvreview)
 
 
 if __name__ == '__main__':

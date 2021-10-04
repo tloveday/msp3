@@ -10,42 +10,49 @@
             </div>
         </div>
     </div>
-
+    <!--Movie review-->
     <div class="row center-align">
         <h4 class="red-text text-darken-2">Movie  Reviews</h4>
-        <div class="col s12 m4 center-align">
-            <div class="card card-review">
-                <span class="card-title">Headline of Review</span>
+        {% for review in reviews %}
+        <div class="row center-align">
+            <h4 class="red-text text-darken-2">{{ reviews.headline }}</h4>
+            <div class="col s12 m4">
+                <div class="card card-review">
                     <div class="card-content left-align">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                         I am convenient because I require little markup to use effectively.
-                        </p>
-                        <p class="center-align">Star Rating</p>
+                        <p>{{ reviews.review }}</p>
+                        <p class="center-align">{{reviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                        <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                     </div>
-                    <div class="card-action">
-                        <a class="btn" href="#">Edit</a>
-                        <a class="btn btn-red" href="#">Delete</a>
-                    </div>
+                        <div class="card-action center-align">
+                            <a class="btn" href="{{ url_for('edit_moviereview', reviews_id) }}">Edit</a>
+                            <a class="btn btn-red" href="#">Delete</a>
+                        </div>
+                </div>
             </div>
         </div>
+    {% endfor %}
     </div>
+    <!-- Television reviews-->
     <div class="row center-align">
         <h4 class="red-text text-darken-2">Television Reviews</h4>
-        <div class="col s12 m4">
-            <div class="card card-review">
-                <span class="center-align card-title">Card Title</span>
+        {% for review in reviews %}
+        <div class="row center-align">
+            <h4 class="red-text text-darken-2">{{ reviews.headline }}</h4>
+            <div class="col s12 m4">
+                <div class="card card-review">
                     <div class="card-content left-align">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.
-                        </p>
-                        <p class="center-align">Star Rating</p>
+                        <p>{{ reviews.review }}</p>
+                        <p class="center-align">{{reviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                        <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                     </div>
-                    <div class="card-action center-align">
-                        <a class="btn" href="#">Edit</a>
-                        <a class="btn btn-red" href="#">Delete</a>
-                    </div>
+                        <div class="card-action center-align">
+                            <a class="btn" href="#">Edit</a>
+                            <a class="btn btn-red" href="#">Delete</a>
+                        </div>
+                </div>
             </div>
         </div>
+    {% endfor %}
     </div>
             <!-- Will contain reviews of movies-->
             <!-- Will contain reviews of TV shows-->

@@ -106,7 +106,8 @@ The website was viewed on a variety of devices including desktop, laptop and mob
 - Trying to workout how to include images in Mongo DB
     - This was worked around by inserting a movie/television show  specific "codeword" in Mongo DB which aligned with the images filename added to the repository.
 
-Getting a Visual 5 star rating system controlled by JQuery to place information in the database upon submission of the review form
+- Getting a Visual 5 star rating system controlled by JQuery to place information in the database upon submission of the review form.
+    - Through discsssion with Antonio, my mentor, he suggested I look into using a hidden input that recorded the inormation printed to the console when clicking the stars from the Javascript/JQuery file. 
 
 
 ### Further Development
@@ -115,7 +116,7 @@ Getting a Visual 5 star rating system controlled by JQuery to place information 
 
 
 ## Bugs
-
+All images stored in the Static/Images folders Images not showing in both movie and television show information pages with the error code 404 emerging. -
 
 ## Deployment
 ### Heroku
