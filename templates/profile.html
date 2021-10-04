@@ -15,16 +15,16 @@
         <h4 class="red-text text-darken-2">Movie  Reviews</h4>
         {% for review in reviews %}
         <div class="row center-align">
-            <h4 class="red-text text-darken-2">{{ reviews.headline }}</h4>
             <div class="col s12 m4">
                 <div class="card card-review">
+                    <h4 class="red-text text-darken-2">{{ review.headline }}</h4>
                     <div class="card-content left-align">
-                        <p>{{ reviews.review }}</p>
-                        <p class="center-align">{{reviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
-                        <span>Reviewed by:</span> <span>{{ reviews.reviewed_by }}</span>
+                        <p>{{ review.review }}</p>
+                        <p class="center-align">{{review.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                        <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                     </div>
                         <div class="card-action center-align">
-                            <a class="btn" href="{{ url_for('edit_moviereview', reviews_id) }}">Edit</a>
+                            <a class="btn" href="{{ url_for('edit_moviereview', reviews_id=review._id) }}">Edit</a>
                             <a class="btn btn-red" href="#">Delete</a>
                         </div>
                 </div>
@@ -35,18 +35,19 @@
     <!-- Television reviews-->
     <div class="row center-align">
         <h4 class="red-text text-darken-2">Television Reviews</h4>
-        {% for tvreview in tvreviews %}
+        {% for tvreview in tv_reviews %}
         <div class="row center-align">
-            <h4 class="red-text text-darken-2">{{ tvreviews.headline }}</h4>
+            
             <div class="col s12 m4">
                 <div class="card card-review">
+                    <h4 class="red-text text-darken-2">{{ tvreview.headline }}</h4>
                     <div class="card-content left-align">
-                        <p>{{ tvreviews.review }}</p>
-                        <p class="center-align">{{tvreviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
-                        <span>Reviewed by:</span> <span>{{ tvreviews.reviewed_by }}</span>
+                        <p>{{ tvreview.review }}</p>
+                        <p class="center-align">{{tvreview.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                        <span>Reviewed by:</span> <span>{{ tvreview.reviewed_by }}</span>
                     </div>
                         <div class="card-action center-align">
-                            <a class="btn" href="{{ url_for('edit_tvreview', tvreviews_id) }}">Edit</a>
+                            <a class="btn" href="{{ url_for('edit_tvreview', tvreviews_id=tvreview._id) }}">Edit</a>
                             <a class="btn btn-red" href="#">Delete</a>
                         </div>
                 </div>

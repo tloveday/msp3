@@ -91,7 +91,14 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
-        return render_template("profile.html", username=username)
+        reviews = list(mongo.db.reviews.find(
+            {'reviewed_by': session["user"]}))
+        tv_reviews = list(mongo.db.tvreviews.find(
+            {'reviewed_by': session["user"]}))
+        print(tv_reviews)
+
+        return render_template("profile.html", username=username,
+        tv_reviews=tv_reviews, reviews=reviews)
 
     return redirect(url_for("sign_in"))
 
@@ -196,7 +203,7 @@ def edit_moviereview(reviews_id):
         return redirect(url_for('get_movies'))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(reviews_id)})
-    return render_template("edit_movie_review.html", review=review)
+    return render_template("edit_movie_review.html", reviews=review)
 
 
 # Edit TV Review
@@ -215,7 +222,7 @@ def edit_tvreview(tvreviews_id):
         return redirect(url_for('get_television'))
 
     tvreview = mongo.db.tvreviews.find_one({"_id": ObjectId(tvreviews_id)})
-    return render_template("edit_tv_review.html", tvreview=tvreview)
+    return render_template("edit_tv_review.html", tvreviews=tvreview)
 
 
 if __name__ == '__main__':
