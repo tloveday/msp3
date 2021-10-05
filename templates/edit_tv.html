@@ -1,35 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Editing Movie info</h3>
+<h3 class="center-align">Editing Television info</h3>
 <div class="row">
     <div class="col s8 offset-s2">
         <form class="card-panel" method="POST" action="{{ url_for('edit_tvshow', tvshow_id=tvshow._id)}}">
+            <!--Title-->
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="title" name="title" value="{{ tvshow.title }}" type="text">
+                    <label for="title">TV Show Title</label>
+                </div>
+            </div>
             <!-- Release Date-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input id="release_date" name="headline" type="text" value="{{ tvshows.release }}">
-                    <label for="release_date">Release Date</label>
+                    <input type="text" id="release" name="release" class="datepicker">
+                    <label for="release">{{ tvshow.release }}</label>
                 </div>
             </div>
             <!-- Number of Seasons-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input id="seasons" name="seasons" type="text" value="{{ tvshows.seasons }}">
+                    <input id="seasons" name="seasons" type="text" value="{{ tvshow.seasons }}">
                     <label for="seasons">Seasons</label>
                 </div>
             </div>
             <!-- Number of Episodes-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input id="episodes" name="episodes" type="text" value="{{ tvshows.episodes }}">
+                    <input id="episodes" name="episodes" type="text" value="{{ tvshow.episodes }}">
                     <label for="episodes">Episodes</label>
+                </div>
+            </div>
+            <!--Code-->
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="code" name="code" type="text" value="{{ tvshow.code }}" data-length="30">
+                    <label for="code">code</label>
                 </div>
             </div>
             <!-- Plot/Synopsis-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
-                    <textarea id="plot" name="plot" class="materialize-textarea" data-length="560">{{- tvshows.plot -}}</textarea>
+                    <textarea id="plot" name="plot" class="materialize-textarea" data-length="560">{{- tvshow.plot -}}</textarea>
                     <label for="plot">Plot</label>
               </div> 
             </div>
@@ -37,7 +51,7 @@
             <div class="row">
                 <div class="switch center-align">
                     <label for="released">
-                        {% if tvshows.released == "on" %}
+                        {% if tvshow.released == "on" %}
                             <input type="checkbox" id="released" name="released" checked>
                         {% else %}
                             <input type="checkbox" id="released" name="released" >

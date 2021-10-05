@@ -26,7 +26,7 @@
                         </div>
                             <div class="card-action center-align">
                                 <button data-target="modal_movie{{review._id}}" class="btn btn-red modal-trigger">Delete <i class="far fa-trash-alt"></i></button>
-                                <a class="btn btn-blue" href="{{ url_for('edit_moviereview', reviews_id=review._id) }}">Edit</a>
+                                <a class="btn btn-blue" href="{{ url_for('edit_moviereview', reviews_id=review._id) }}">Edit <i class="far fa-edit right"></i></a>
                             </div>
                     </div>
                 </div>
@@ -37,8 +37,8 @@
                     <p>Are you sure you want to delete this review?</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ url_for('delete_moviereview', reviews_id=review._id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt"></i></a>
-                        <button class="btn btn-blue modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
+                        <a href="{{ url_for('delete_moviereview', reviews_id=review._id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt right"></i></a>
+                        <button class="btn btn-blue modal-close">Cancel<i class="far fa-times-circle right"></i></button>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
         <h4 class="red-text text-darken-2">Television Reviews</h4>
         <div class="row center-align">
             {% for tvreview in tv_reviews %}
-                <div class="col s12 m3">
+                <div class="col s12 m4">
                     <div class="card card-review">
                         <h4 class="red-text text-darken-2">{{ tvreview.headline }}</h4>
                         <div class="card-content left-align">
@@ -60,7 +60,7 @@
                         </div>
                             <div class="card-action center-align">
                                 <button data-target="modal_tv{{tvreview._id}}" class="btn btn-red modal-trigger">Delete <i class="far fa-trash-alt"></i></button>
-                                <a class="btn btn-blue" href="{{ url_for('edit_tvreview', tvreviews_id=tvreview._id) }}">Edit</a>
+                                <a class="btn btn-blue" href="{{ url_for('edit_tvreview', tvreviews_id=tvreview._id) }}">Edit <i class="far fa-edit right"></i></a>
                             </div>
                     </div>
                 </div>
@@ -72,8 +72,8 @@
                     <p>Are you sure you want to delete this review?</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ url_for('delete_tvreview', tvreviews_id=tvreview._id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt"></i></a>
-                        <button class="btn btn-blue modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
+                        <a href="{{ url_for('delete_tvreview', tvreviews_id=tvreview._id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt right"></i></a>
+                        <button class="btn btn-blue modal-close">Cancel<i class="far fa-times-circle right"></i></button>
                     </div>
                 </div>
             {% endfor %}

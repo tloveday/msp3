@@ -328,7 +328,7 @@ def edit_tvshow(tvshow_id):
         }
         mongo.db.tvshows.update({"_id": ObjectId(tvshow_id)}, tvedit)
         flash("Television Show Successfully Edited")
-        return redirect(url_for('get_televsion'))
+        return redirect(url_for('get_television'))
 
     tvshow = mongo.db.tvshows.find_one({"_id": ObjectId(tvshow_id)})
     return render_template("edit_tv.html", tvshow=tvshow)

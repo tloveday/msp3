@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Write your review</h3>
+<h3 class="center-align">Write your review</h3>
 <div class="row">
     <div class="col s8 offset-s2">
         <form class="card-panel" method="POST" action="{{ url_for('review', movie_id=movie_id)}}">

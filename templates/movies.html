@@ -25,9 +25,9 @@
                             <a href="{{ url_for('movieinfo', movie_id=movie._id) }}" class="btn btn-blue"> <i class="far fa-eye right"></i>View</a>
                             {% if movie.released == "on" %}
                             <!-- Take User to review page if movie is classed as released-->
-                            <a href="{{ url_for('review', movie_id=movie._id) }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                            <a href="{{ url_for('review', movie_id=movie._id) }}" class="btn btn-red"> <i class="fas fa-pencil-alt right"></i>Revue</a>
                         {% else %}
-                            <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                            <a href="#" class="btn btn-red disabled"> <i class="fas fa-pencil-alt right"></i>Revue</a>
                         {% endif %}
                         </div>
                       </div>

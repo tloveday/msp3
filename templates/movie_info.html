@@ -26,15 +26,15 @@
                 <span></span>
             </div>
             <div class="card-action center-align">
-                {% if movie.released == "yes" %}
-                    <a href="{{ url_for('review', movie_id=movie._id) }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
+                {% if movie.released == "on" %}
+                    <a href="{{ url_for('review', movie_id=movie._id) }}" class="btn btn-red"> <i class="fas fa-pencil-alt right"></i>Revue</a>
                 {% else %}
-                    <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
+                    <a href="#" class="btn btn-red disabled"> <i class="fas fa-pencil-alt right">></i>Revue</a>
                 {% endif %}
                 <a href="{{ url_for('get_movies') }}" class="btn btn-blue"> <i class="far fa-arrow-alt-circle-left right"></i>Back</a>
                 <!-- Admin Control-->
                 {% if session.user == 'admin' %}
-                    <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="btn btn-yellow" > <i class="far fa-arrow-alt-circle-left right"></i>Edit</a>
+                    <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="btn btn-yellow" > <i class="far fa-edit right"></i>Edit</a>
                 {% endif %}
             </div>
           </div>
