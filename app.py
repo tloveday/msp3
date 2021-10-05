@@ -131,12 +131,10 @@ def get_television():
 def movieinfo(movie_id):
     # Gets movie info from db
     movie = mongo.db.movies.find_one({'_id': ObjectId(movie_id)})
-    review = list(mongo.db.reviews.find())
-    related_review = list(mongo.db.reviews.find({'movie_id': movie_id}))
-
+    reviews = list(mongo.db.reviews.find(
+            {'movie._id': movie_id}))
     return render_template(
-        'movie_info.html', movie=movie, review=review,
-        related_review=related_review)
+        'movie_info.html', movie=movie, reviews=reviews)
 
 
 # TV Information Page
@@ -144,12 +142,11 @@ def movieinfo(movie_id):
 def tvinfo(tvshows_id):
     # Gets TV info from db
     tvshows = mongo.db.tvshows.find_one({'_id': ObjectId(tvshows_id)})
-    tvreview = list(mongo.db.tvreviews.find())
-    related_review = list(mongo.db.tvreviews.find({'tvshows_id': tvshows_id}))
+    tvreviews = list(mongo.db.tvreviews.find(
+            {'tvshows_id': tvshows_id}))
 
     return render_template(
-        'television_info.html', tvshows=tvshows, tvreview=tvreview,
-        related_review=related_review)
+        'television_info.html', tvshows=tvshows, tvreviews=tvreviews)
 
 
 # Movie Review Forms
@@ -239,6 +236,42 @@ def delete_tvreview(tvreviews_id):
     mongo.db.tvreviews.remove({"_id": ObjectId(tvreviews_id)})
     flash("Review Successfully Deleted")
     return redirect(url_for('get_television'))
+
+
+#  Admin Movie Edit
+@app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
+def edit_movie(movie_id):
+    if request.method == "POST":
+        edit = {
+            "release_date": request.form.get("release_date"),
+            "released": request.form.get("released"),
+            "plot": request.form.get("plot"),
+        }
+        mongo.db.movies.update({"_id": ObjectId(movie_id)}, edit)
+        flash("Movie Successfully Edited")
+        return redirect(url_for('get_movies'))
+
+    movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
+    return render_template("edit_movie.html", movie=movie)
+
+
+#  Admin TV Show Edit
+@app.route("/edit_tvshow/<tvshow_id>", methods=["GET", "POST"])
+def edit_tvshow(tvshow_id):
+    if request.method == "POST":
+        tvedit = {
+            "release": request.form.get("release"),
+            "seasons": request.form.get("seasons"),
+            "episodes": request.form.get("seasons"),
+            "released": request.form.get("released"),
+            "plot": request.form.get("plot"),
+        }
+        mongo.db.tvshows.update({"_id": ObjectId(tvshow_id)}, tvedit)
+        flash("Televisiion Show Successfully Edited")
+        return redirect(url_for('get_televsion'))
+
+    tvshow = mongo.db.tvshows.find_one({"_id": ObjectId(tvshow_id)})
+    return render_template("edit_tv.html", tvshow=tvshow)
 
 
 if __name__ == '__main__':

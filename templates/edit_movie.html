@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Editing Movie info</h3>
+<div class="row">
+    <div class="col s8 offset-s2">
+        <form class="card-panel" method="POST" action="{{ url_for('edit_movie', movie_id=movie_id)}}">
+            <!-- Release Date-->
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="release_date" name="headline" type="text" value="{{ movie.release_date }}" data-length="30">
+                    <label for="release_date">Release Date</label>
+                </div>
+            </div>
+            <!-- Plot/Synopsis-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <textarea id="plot" name="plot" class="materialize-textarea" data-length="560">{{- movie.plot -}}</textarea>
+                    <label for="plot">Plot</label>
+              </div> 
+            </div>
+            <!-- Movie Released - When Changed users should be able to review movies previously blocked-->
+            <div class="row">
+                <div class="switch center-align">
+                    <label for="released">
+                        {% if movie.released == "yes" %}
+                            <input type="checkbox" id="released" name="released" checked>
+                        {% else %}
+                            <input type="checkbox" id="released" name="released" checked>
+                        {% endif %}
+                    <span class="lever"></span>
+                    Released
+                    </label>
+                </div>
+            </div>
+            <!--Submit Button-->
+            <div class="row">
+                <div class="col s8 offset-s2 center-align">
+                    <button type="submit" class="btn-large btn-red">
+                        Edit Movie
+                    </button>
+                    <a href="{{ url_for('get_movies') }}" class="btn btn-large">Cancel</a>
+
+                </div>
+            </div>
+
+        </form>      
+    </div>
+</div>
+        
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

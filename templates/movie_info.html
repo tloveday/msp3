@@ -31,33 +31,39 @@
                 {% else %}
                     <a href="#" class="btn btn-red disabled"> <i class="far fa-edit right"></i>Revue</a>
                 {% endif %}
-                    <a href="{{ url_for('get_movies') }}" class="btn"> <i class="far fa-arrow-alt-circle-left right"></i>Back</a>
+                <a href="{{ url_for('get_movies') }}" class="btn"> <i class="far fa-arrow-alt-circle-left right"></i>Back</a>
+                <!-- Admin Control-->
+                {% if session.user == 'admin' %}
+                    <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="btn btn-grey" > <i class="far fa-arrow-alt-circle-left right"></i>Edit</a>
+                {% endif %}
             </div>
           </div>
         </div>
     </div>
     <!-- User reviews of Movie-->
-    {% for review in reviews %}
-        <div class="row center-align">
-            <h4 class="red-text text-darken-2">{{ reviews.headline }}</h4>
-            <div class="col s12 m4">
-                <div class="card card-review">
-                    <div class="card-content left-align">
-                        <p>{{ reviews.review }}</p>
-                        <p class="center-align">{{reviews.rating}}/5 <i class="fas fa rating-picked"></i></p>
-                        <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
-                    </div>
-                    <!-- If author of review Allow them options to edit delete review.-->
-                    {% if session.user %}
-                        <div class="card-action center-align">
-                            <a class="btn" href="{{ url_for('edit_moviereview', reviews_id) }}">Edit</a>
-                            <a class="btn btn-red" href="#">Delete</a>
-                    {% else %}
+    <div class="row center-align">
+        <h4 class="red-text text-darken-2">Reviews</h4>
+        {% for review in reviews %}
+            <div class="row center-align">
+                <div class="col s12 m4">
+                    <div class="card card-review">
+                        <h4 class="red-text text-darken-2">{{ review.headline }}</h4>
+                        <div class="card-content left-align">
+                            <p>{{ review.review }}</p>
+                            <p class="center-align">{{review.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                            <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                         </div>
-                    {% endif%}
+                           <!-- If author of review Allow them options to edit delete review.-->
+                    {% if session.user %}
+                    <div class="card-action center-align">
+                        <a class="btn" href="{{ url_for('edit_moviereview', reviews_id) }}">Edit</a>
+                        <a class="btn btn-red" href="#">Delete</a>
+                {% else %}
+                    </div>
+                {% endif%}
+                    </div>
                 </div>
             </div>
-        </div>
     {% endfor %}
     
 {% endblock %}

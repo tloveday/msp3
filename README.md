@@ -1,6 +1,6 @@
 # MC REVUE
 [View live project here:] (https://m-c-re-vue.herokuapp.com/)
-![Impostor Hunt](assets/images/ImpostorHuntMockUp.png)
+![MCREVUE](static/images/site/brand.png)
 MC REVUE is a Movie information and review website dedicated to the Marvel Cinematic Universe.
 Its name itself is a play on the MCU acronym used by Marvel and its fans for the Marvel Cinematic Universe.
 
@@ -19,7 +19,6 @@ Wireframes for
 ![Wireframe](assets/Wireframe/Mobile.png)
 
 ## User Experince
-
 ### New User
 - View Movie and Television reviews
 - Create an account to register reviews.
@@ -45,7 +44,7 @@ Red - #ED1D24
 ### Typography 
 "Poppins" - 
 
-"Marvel" - is a complimentary font to "Poppins" and is more inkeepnig with the Marvel Studios product.
+"Marvel" - is a complimentary font to "Poppins" and is more inkeeping with the Marvel Studios product.
 
 ### Imagery
 Majority of the imagry featured in the project comes from Marvel Entertainment and marvel Studios as Theatrical Poster Art or logos used to announce projects at ComicCon 2020 or at a Disney investor event of 2020.
@@ -75,8 +74,6 @@ Python
     - Google Fonts provided the code for the fonts used throughout the project.
 - [Heroku:] (https://heroku.com/)
     - Heroku was used as the platform as a service (PaaS) to build, run, and operate applications entirely in the cloud
-- [IconScout:] (https://iconscout.com/unicons/)
-    - Iconscout and its Unicons were used for a range of font based images like those found at fontawesome. 
 - [Materialize CSS:](https://materializecss.com/)
     - Materialize CSS was used to assist with the responsiveness and styling of the website.
 - [MongoDB:](https://www.mongodb.com/) 
@@ -129,7 +126,9 @@ The website was viewed on a variety of devices including desktop, laptop and mob
     - This was worked around by inserting a movie/television show  specific "codeword" in Mongo DB which aligned with the images filename added to the repository.
 
 - Getting a Visual 5 star rating system controlled by JQuery to place information in the database upon submission of the review form.
-    - Through discsssion with Antonio, my mentor, he suggested I look into using a hidden input that recorded the inormation printed to the console when clicking the stars from the Javascript/JQuery file. 
+    - Through discsssion with Antonio, my mentor, he suggested I look into using a hidden input that recorded the inormation printed to the console when clicking the stars from the Javascript/JQuery file.
+
+- Testing with friends reavealled that the guidance for users to Sign In/Register to make reviews should be clearer this was combated by ... 
 
 
 ### Further Development
