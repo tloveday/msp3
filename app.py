@@ -238,12 +238,42 @@ def delete_tvreview(tvreviews_id):
     return redirect(url_for('get_television'))
 
 
+# Admin Create Movie
+@app.route("/create_movie", methods=["GET", "POST"])
+def create_movie():
+    if request.method == "POST":
+        # Check if movie already exists in database
+        existing_movie = mongo.db.movies.find_one(
+            {"title": request.form.get("title")})
+
+        if existing_movie:
+            flash("Movie Already Exists")
+            return redirect(url_for("create_movie"))
+
+        create_movie = {
+            "title": request.form.get("title"),
+            "release_date": request.form.get("release_date"),
+            "phase": request.form.get("phase"),
+            "code": request.form.get("code").lower(),
+            "released": request.form.get("released"),
+            "plot": request.form.get("plot"),
+        }
+        mongo.db.movies.insert_one(create_movie)
+
+        flash("Movie Creation Successful")
+        return redirect(url_for("get_movies"))
+    return render_template("create_movie.html", movie=movie)
+
+
 #  Admin Movie Edit
 @app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
     if request.method == "POST":
         edit = {
+            "title": request.form.get("title"),
             "release_date": request.form.get("release_date"),
+            "phase": request.form.get("phase"),
+            "code": request.form.get("code").lower(),
             "released": request.form.get("released"),
             "plot": request.form.get("plot"),
         }

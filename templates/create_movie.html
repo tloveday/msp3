@@ -1,35 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Editing Movie info</h3>
+<h3 class="center-align">Create Movie</h3>
 <div class="row">
     <div class="col s8 offset-s2">
-        <form class="card-panel" method="POST" action="{{ url_for('edit_movie', movie_id=movie._id)}}">
+        <form class="card-panel" method="POST" action="{{ url_for('create_movie')}}">
             <!--Title-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input id="title" name="title" value="{{ movie.title }}" type="text">
+                    <input id="title" name="title" type="text">
                     <label for="title">Movie Title</label>
                 </div>
             </div>
             <!-- Release Date-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input type="text" id="release_date" name="release_date" class="datepicker">
-                    <label for="release_date">{{ movie.release_date }}</label>
+                    <input type="text" id="release_date" name="relese_date" class="datepicker">
+                    <label for="release_date">Release Date</label>
                 </div>
             </div>
             <!--Phase-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input id="phase" name="phase" type="text" value="{{ movie.phase }}" data-length="30">
+                    <input id="phase" name="phase" type="text" data-length="30">
                     <label for="phase">Phase</label>
                 </div>
             </div>
             <!--Code-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input id="code" name="code" type="text" value="{{ movie.code }}" data-length="30">
+                    <input id="code" name="code" type="text" data-length="30">
                     <label for="code">code</label>
                 </div>
             </div>
@@ -39,28 +39,24 @@
                     <label for="released">
                         <span>Released:</span>
                         No
-                        {% if movie.released == "on" %}
-                            <input type="checkbox" id="released" name="released" checked>
-                        {% else %}
-                            <input type="checkbox" id="released" name="released" checked>
-                        {% endif %}
-                        <span class="lever"></span>
-                        Yes
+                        <input type="checkbox" id="released" name="released" checked>
+                    <span class="lever"></span>
+                    Yes
                     </label>
                 </div>
             </div>
             <!-- Plot/Synopsis-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
-                    <textarea id="plot" name="plot" class="materialize-textarea" data-length="560">{{- movie.plot -}}</textarea>
+                    <textarea id="plot" name="plot" class="materialize-textarea" data-length="560"></textarea>
                     <label for="plot">Plot</label>
               </div> 
-            
+            </div>
             <!--Submit Button-->
             <div class="row">
                 <div class="col s8 offset-s2 center-align">
                     <button type="submit" class="btn-large btn-red">
-                        Edit Movie
+                        Create Movie
                     </button>
                     <a href="{{ url_for('get_movies') }}" class="btn btn-blue btn-large">Cancel</a>
 

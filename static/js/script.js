@@ -3,6 +3,7 @@ $(document).ready(function(){
     $(".dropdown-trigger").dropdown();
     $('.social-media').hover(
         function(){ $(this).toggleClass('pulse') });
+        $('.datepicker').datepicker()
     $('input#headline, textarea#review').characterCounter();
     $('.modal').modal();
 })
