@@ -265,6 +265,34 @@ def create_movie():
     return render_template("create_movie.html", movie=movie)
 
 
+# Admin Create TV Show
+@app.route("/create_tv", methods=["GET", "POST"])
+def create_tv():
+    if request.method == "POST":
+        # Check if TV Show already exists in database
+        existing_tv = mongo.db.tvshows.find_one(
+            {"title": request.form.get("title")})
+
+        if existing_tv:
+            flash("Show Already Exists")
+            return redirect(url_for("create_tv"))
+
+        create_tv = {
+            "title": request.form.get("title"),
+            "release": request.form.get("release"),
+            "seasons": request.form.get("seasons"),
+            "episodes": request.form.get("episodes"),
+            "code": request.form.get("code").lower(),
+            "released": request.form.get("released"),
+            "plot": request.form.get("plot"),
+        }
+        mongo.db.tvshows.insert_one(create_tv)
+
+        flash("TV Show Created Successfully")
+        return redirect(url_for("get_television"))
+    return render_template("create_tv.html", tvshow=tvshow)
+
+
 #  Admin Movie Edit
 @app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
@@ -290,9 +318,11 @@ def edit_movie(movie_id):
 def edit_tvshow(tvshow_id):
     if request.method == "POST":
         tvedit = {
+            "title": request.form.get("title"),
             "release": request.form.get("release"),
             "seasons": request.form.get("seasons"),
-            "episodes": request.form.get("seasons"),
+            "episodes": request.form.get("episodes"),
+            "code": request.form.get("code").lower(),
             "released": request.form.get("released"),
             "plot": request.form.get("plot"),
         }
