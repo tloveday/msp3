@@ -49,7 +49,7 @@
             <!-- Links Only Accessile To "admin"-->
             {% if session.user == "admin" %}
               <li><a href="{{ url_for('create_movie') }}"> Add Movie</a></li>
-              <li><a href="#!"> Add Show</a></li>
+              <li><a href="{{ url_for('create_tv') }}"> Add Show</a></li>
             {% endif %}
             <!--Links Accessible by Registered Users-->
             {% if session.user %}
@@ -72,7 +72,7 @@
         <!-- Links Only Accessile To "admin"-->
         {% if session.user == "admin" %}
           <li><a href="{{ url_for('create_movie') }}"> Add Movie</a></li>
-          <li><a href="#!"> Add Show</a></li>
+          <li><a href="{{ url_for('create_tv') }}"> Add Show</a></li>
         {% endif %}
       <!--Links Accessible by Registered Users-->  
       {% if session.user %}

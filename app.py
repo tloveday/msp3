@@ -262,7 +262,7 @@ def create_movie():
 
         flash("Movie Creation Successful")
         return redirect(url_for("get_movies"))
-    return render_template("create_movie.html", movie=movie)
+    return render_template("create_movie.html")
 
 
 # Admin Create TV Show
@@ -290,7 +290,7 @@ def create_tv():
 
         flash("TV Show Created Successfully")
         return redirect(url_for("get_television"))
-    return render_template("create_tv.html", tvshow=tvshow)
+    return render_template("create_tv.html")
 
 
 #  Admin Movie Edit
@@ -327,7 +327,7 @@ def edit_tvshow(tvshow_id):
             "plot": request.form.get("plot"),
         }
         mongo.db.tvshows.update({"_id": ObjectId(tvshow_id)}, tvedit)
-        flash("Televisiion Show Successfully Edited")
+        flash("Television Show Successfully Edited")
         return redirect(url_for('get_televsion'))
 
     tvshow = mongo.db.tvshows.find_one({"_id": ObjectId(tvshow_id)})

@@ -4,7 +4,7 @@
 <h3 class="center-align">Editing Movie info</h3>
 <div class="row">
     <div class="col s8 offset-s2">
-        <form class="card-panel" method="POST" action="{{ url_for('edit_tvshow', tvshows_id=tvshows_id)}}">
+        <form class="card-panel" method="POST" action="{{ url_for('edit_tvshow', tvshow_id=tvshow._id)}}">
             <!-- Release Date-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
@@ -37,10 +37,10 @@
             <div class="row">
                 <div class="switch center-align">
                     <label for="released">
-                        {% if tvshows.released == "yes" %}
+                        {% if tvshows.released == "on" %}
                             <input type="checkbox" id="released" name="released" checked>
                         {% else %}
-                            <input type="checkbox" id="released" name="released" checked>
+                            <input type="checkbox" id="released" name="released" >
                         {% endif %}
                     <span class="lever"></span>
                     Released

@@ -1,36 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Create Movie</h3>
+<h3 class="center-align">Create TV Show</h3>
 <div class="row">
     <div class="col s8 offset-s2">
-        <form class="card-panel" method="POST" action="{{ url_for('create_movie')}}">
+        <form class="card-panel" method="POST" action="{{ url_for('create_tv')}}">
             <!--Title-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
                     <input id="title" name="title" type="text">
-                    <label for="title">Movie Title</label>
+                    <label for="title">TV Show Title</label>
                 </div>
             </div>
             <!-- Release Date-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input type="text" id="release_date" name="release_date" class="datepicker">
-                    <label for="release_date">Release Date</label>
+                    <input type="text" id="release" name="release" class="datepicker">
+                    <label for="release">Release Date</label>
                 </div>
             </div>
-            <!--Phase-->
+            <!--Seasons-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
-                    <input id="phase" name="phase" type="text" data-length="30">
-                    <label for="phase">Phase</label>
+                    <input id="seasons" name="seasons" type="text" data-length="30">
+                    <label for="seasons">Seasons</label>
+                </div>
+            </div>
+            <!--Episodes-->
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="episodes" name="episodes" type="text" data-length="30">
+                    <label for="episodes">Episodes</label>
                 </div>
             </div>
             <!--Code-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">
                     <input id="code" name="code" type="text" data-length="30">
-                    <label for="code">code</label>
+                    <label for="code">Code</label>
                 </div>
             </div>
             <!-- Movie Released - When Changed users should be able to review movies previously blocked-->
@@ -40,8 +47,8 @@
                         <span>Released:</span>
                         No
                         <input type="checkbox" id="released" name="released">
-                    <span class="lever"></span>
-                    Yes
+                        <span class="lever"></span>
+                        Yes
                     </label>
                 </div>
             </div>
@@ -56,7 +63,7 @@
             <div class="row">
                 <div class="col s8 offset-s2 center-align">
                     <button type="submit" class="btn-large btn-red">
-                        Create Movie
+                        Create TV Show
                     </button>
                     <a href="{{ url_for('get_movies') }}" class="btn btn-blue btn-large">Cancel</a>
 
