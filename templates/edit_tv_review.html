@@ -35,12 +35,11 @@
             </div>
             <!--Submit Button-->
             <div class="row">
-                <a href="{{ url_for('profile', username=session['user']) }}" class="btn large">Cancel</a>
                 <div class="col s8 offset-s2 center-align">
                     <button type="submit" class="btn-large btn-red">
                         Edit Review
                     </button>
-
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-blue btn-large">Cancel</a>
                 </div>
             </div>
 

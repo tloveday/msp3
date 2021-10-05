@@ -12,7 +12,7 @@
                         <div class="card-stacked">
                             <span>Release Date:</span> <span class="result"> {{ tvshow.release }} </span> <br>
                             <span>Seasons:</span> {{ tvshow.seasons }} <span>Episodes:</span> {{ tvshow.episodes }}<br>
-                            <a href="{{ url_for('tvinfo', tvshows_id=tvshow._id) }}" class="btn"> <i class="far fa-eye right"></i>View</a>
+                            <a href="{{ url_for('tvinfo', tvshows_id=tvshow._id) }}" class="btn btn-blue"> <i class="far fa-eye right"></i>View</a>
                             {% if tvshow.released == "yes" %}
                                 <a href="{{ url_for('tvreview', tvshows_id=tvshow._id) }}" class="btn btn-red"> <i class="far fa-edit right"></i>Revue</a>
                             {% else %}

@@ -24,8 +24,8 @@
                         <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                     </div>
                         <div class="card-action center-align">
-                            <a class="btn" href="{{ url_for('edit_moviereview', reviews_id=review._id) }}">Edit</a>
                             <button data-target="modal_movie" class="btn btn-red modal-trigger">Delete <i class="far fa-trash-alt"></i></button>
+                            <a class="btn btn-blue" href="{{ url_for('edit_moviereview', reviews_id=review._id) }}">Edit</a>
                         </div>
                 </div>
             </div>
@@ -46,8 +46,8 @@
                         <span>Reviewed by:</span> <span>{{ tvreview.reviewed_by }}</span>
                     </div>
                         <div class="card-action center-align">
-                            <a class="btn" href="{{ url_for('edit_tvreview', tvreviews_id=tvreview._id) }}">Edit</a>
                             <button data-target="modal_tv" class="btn btn-red modal-trigger">Delete <i class="far fa-trash-alt"></i></button>
+                            <a class="btn btn-blue" href="{{ url_for('edit_tvreview', tvreviews_id=tvreview._id) }}">Edit</a>
                         </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
     </div>
     <div class="modal-footer">
         <a href="{{ url_for('delete_moviereview', reviews_id=reviews._id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt"></i></a>
-        <button class="btn btn-red modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
+        <button class="btn btn-blue modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
 
     </div>
   </div>
@@ -77,7 +77,7 @@
     </div>
     <div class="modal-footer">
         <a href="{{ url_for('delete_tvreview', tvreviews_id=tvreviews_id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt"></i></a>
-        <button class="btn btn-red modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
+        <button class="btn btn-blue modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
     </div>
   </div>
     
