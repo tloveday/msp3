@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown();
     $('.social-media').hover(
         function(){ $(this).toggleClass('pulse') });
     $('input#headline, textarea#review').characterCounter();
