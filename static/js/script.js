@@ -1,12 +1,11 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
-    $(".dropdown-trigger").dropdown();
     $('.social-media').hover(
-        function(){ $(this).toggleClass('pulse') });
-        $('.datepicker').datepicker()
+        function(){ $(this).toggleClass('pulse'); });
+    $('.datepicker').datepicker();
     $('input#headline, textarea#review').characterCounter();
     $('.modal').modal();
-})
+});
 
 
 //Guide for making the Star Rating System in JQuery from Happy Coder on Youtube - https://www.youtube.com/watch?v=1xW6DPpwcDM&t=14s edited to meet design

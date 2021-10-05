@@ -1,6 +1,7 @@
 # MC REVUE
-[View live project here:] (https://m-c-re-vue.herokuapp.com/)
 ![MCREVUE](static/images/site/brand.png)
+View live project [here:](https://m-c-re-vue.herokuapp.com/)
+
 MC REVUE is a Movie information and review website dedicated to the Marvel Cinematic Universe.
 Its name itself is a play on the MCU acronym used by Marvel and its fans for the Marvel Cinematic Universe.
 
@@ -10,13 +11,6 @@ The brief was to build an interactive front-end site that responds to users' act
 
 
 ## Mock Up
-Wireframes for
-- Computer
-![Wireframe](assets/Wireframe/Computer.png)
-- Tablet
-![Wireframe](assets/Wireframe/Tablet.png)
-- Mobile
-![Wireframe](assets/Wireframe/Mobile.png)
 
 ## User Experince
 ### New User
@@ -37,12 +31,28 @@ Wireframes for
 - Administrators (Admin) can edit MCU product information to keep it up to date 
 
 ## Design
+### Wireframes
+- Computer
+![Wireframe](assets/Wireframe/Computer.png)
+- Tablet
+![Wireframe](assets/Wireframe/Tablet.png)
+- Mobile
+![Wireframe](assets/Wireframe/Mobile.png)
+
+### Database Structure
+
+### Security
+During development sensitive data, such as database configuration variables, were saved in an env.py file. This file is not uploaded to GitHub for security purposes. These details are stored on Heroku once the site has reached the deployment stage.
+
+The users accounts are protected with password hashing avaialble via Werkzeug.
+
+
 ### Colour schemes
 The Colour Scheme of the website is inspired by Marvel Entertainment's colour scheme
-Red - #ED1D24 - This is the same Hexcode used as by Marvel in thier main brand logo be it for Comics or Movie/TV
-Blue - #4682B4 - This blue is used by Marvel for the superheroe team "The Fantastic Four" and is used to show the opposite commands for the buttons project wide
-Yellow - #FBCA03 - This yellow is commonly found in Iron Man projects in Marvel lore. This colour is only seen by Admin and is specific for Admin Tasks such as editing project information.
-Black and White  - #000000 #FFFFFF are set via Materialize CSS
+- Red - #ED1D24 - This is the same Hexcode used as by Marvel in thier main brand logo be it for Comics or Movie/TV
+- Blue - #4682B4 - This blue is used by Marvel for the superheroe team "The Fantastic Four" and is used to show the opposite commands for the buttons project wide
+- Yellow - #FBCA03 - This yellow is commonly found in Iron Man projects in Marvel lore. This colour is only seen by Admin and is specific for Admin Tasks such as editing project information.
+- Black and White  - #000000 #FFFFFF are set via Materialize CSS
 
 
 ### Typography 
@@ -53,8 +63,10 @@ Black and White  - #000000 #FFFFFF are set via Materialize CSS
 ### Imagery
 Majority of the imagry featured in the project comes from Marvel Entertainment and marvel Studios as Theatrical Poster Art or logos used to announce projects at ComicCon 2020 or at a Disney investor event of 2020.
 Logos for the website "MC REVUE" and "Pan Industries" were created by myself
-- MC REVUE is a spin on the Marvel Studios logo with the U in white to signal the MCU acronym for the Marvel Cinematic Universe
-- Pan Industires is a play on the Paragrah syntax with a pseudo name for myself alongside one of the commonly used company names found within Marvel Lore 
+- MC REVUE:
+    - This is a spin on the Marvel Studios logo with the "U" in white to signal the MCU acronym commonly used for the Marvel Cinematic Universe.
+- Pan Industires
+    - This is a play on the HTML Paragraph syntax with a pseudo name for myself (Captain Pan) alongside one of the commonly used company names found within Marvel lore 
 
 
 ### Languages Used
@@ -67,31 +79,36 @@ Python
 - [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the wire frames for design.
 - [Font Awesome:](https://fontawesome.com/)
-    - Font awesome was used for a range of font based images found throughout the project.
+    - Font Awesome was used for a range of font based images found throughout the project.
 - [favconit:](http://faviconit.com/en)
     - Favconit was used to build and code the favcons that feature on the project.
-- [Git](https://git-scm.com/)
+- [Git:](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
 - [Google Fonts:](https://fonts.google.com/)
     - Google Fonts provided the code for the fonts used throughout the project.
-- [Heroku:] (https://heroku.com/)
+- [Heroku:](https://heroku.com/)
     - Heroku was used as the platform as a service (PaaS) to build, run, and operate applications entirely in the cloud
 - [Materialize CSS:](https://materializecss.com/)
     - Materialize CSS was used to assist with the responsiveness and styling of the website.
 - [MongoDB:](https://www.mongodb.com/) 
     - MongoDB was used to create the database used throughout the project.
-- [Procreate:] (https://procreate.art/) 
+- [Procreate:](https://procreate.art/) 
     - Procreate was used to create the visuals for the art used throughout the project.
-
+- [Werkzeug:](https://werkzeug.palletsprojects.com/en/2.0.x/)
+    - Werkzeug is a comprehensive WSGI web application library. It began as a simple collection of various utilities for WSGI applications and has become one of the most advanced WSGI utility libraries.
 
 ## Testing
-HTML was directly imput into (https://validator.w3.org/) and no warnings or errors were shown.
-CSS was directly imput into (https://jigsaw.w3.org/css-validator/) with results showing no warnings or errors. 
+HTML was directly input into [WC3](https://validator.w3.org/)
+
+CSS was directly input into [W3c Jigsaw](https://jigsaw.w3.org/css-validator/)
+
+Javascript was directly input into [JSHint](https://jshint.com/)
+
+Python was run with [Pylint](https://pypi.org/project/pylint/) in the terminal, the code is PEP8 compliant.
 
 ### User goals
-
 #### New User
 - Create reviews for MCU products viewed
     - Users are able to easily create accounts to review MCU Telvision and Movie 
@@ -114,25 +131,26 @@ CSS was directly imput into (https://jigsaw.w3.org/css-validator/) with results 
 - Users create reviews for MCU products released
     - Users can only review MCU prodcts that have be released
 - Users can access reviews made by other users for MCU products.
-    - Outcome
+    - Users can see reviews made by other users relevant to the movie/tv show being viewed
 - Users can amend and delete personal reivews for the MCU Products.
     - Users are able to edit personal reviews should thier opinions chnge over time.
 - Administrators (Admin) can edit MCU product information to keep informaton up to date
-    - Outcome
+    - Through the admin profile administators have the power to create and edit MCU product information as and when required.
 
 
 ### Further Testing
 Website was tested on a variety of browsers including Google Chrome, Safari, Firefox, And Edge.
-The website was viewed on a variety of devices including desktop, laptop and mobile on both iOS and Android.
+The website was viewed on a variety of devices including desktop, laptop and mobile on both iOS and Android operating systems.
+Through the Twich community of Warwick Zero, which featured during  - Interactive Front End 
 
 ### Problems
 - Trying to workout how to include images in Mongo DB
     - This was worked around by inserting a movie/television show  specific "codeword" in Mongo DB which aligned with the images filename added to the repository.
 
 - Getting a Visual 5 star rating system controlled by JQuery to place information in the database upon submission of the review form.
-    - Through discsssion with Antonio, my mentor, he suggested I look into using a hidden input that recorded the inormation printed to the console when clicking the stars from the Javascript/JQuery file.
+    - Through discsssion with Antonio, my mentor, I included a hidden input that recorded the information printed to the console when clicking the stars from the Javascript/JQuery file.
 
-- Testing with friends reavealled that the guidance for users to Sign In/Register to make reviews should be clearer this was combated by ... 
+- 
 
 
 ### Further Development
