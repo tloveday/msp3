@@ -45,8 +45,8 @@
     <div class="row center-align">
         <h4 class="red-text text-darken-2">Television Reviews</h4>
         <div class="row center-align">
-            {% for tvreview in tv_reviews %}
-            <div class="col s12 m3">
+            {% for tvreview in tvreviews %}
+            <div class="col s12 m4">
                 <div class="card card-review">
                     <h4 class="red-text text-darken-2">{{ tvreview.headline }}</h4>
                     <div class="card-content left-align">
@@ -55,13 +55,12 @@
                         <span>Reviewed by:</span> <span>{{ tvreview.reviewed_by }}</span>
                     </div>
                         <!-- If author of review Allow them options to edit delete review.-->
-                    {% if session.user %}
-                    <div class="card-action center-align">
-                        <a class="btn" href="{{ url_for('edit_tvreview', tvreviews_id) }}">Edit</a>
-                        <a class="btn btn-red" href="#">Delete</a>
-                {% else %}
-                    </div>
-                {% endif%}
+                    {% if session.user == tvreview.reviewed_by %}
+                        <div class="card-action center-align">
+                            <a class="btn btn-blue" href="{{ url_for('edit_tvreview', tvreviews_id=tvreview._id) }}">Edit</a>
+                        </div>
+                    {% endif%}
+                </div>
             </div>
             {% endfor %}
         </div>

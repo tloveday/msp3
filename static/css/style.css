@@ -17,6 +17,7 @@ span{
 
 h1,h2, h3, h4, h5{
     font-family:  'Marvel', sans-serif;
+    color: #ed1d24;
 }
 
 li{
@@ -86,9 +87,9 @@ ul li{
 }
 
 .card-home{
-    max-width: 350px;
-    margin-right: 40px;
-    margin-left: 40px;
+    max-width: 450px;
+    margin-right: 30px;
+    margin-left: 30px;
     padding: 10px;
     border-radius: 10px;
     align-content: center;

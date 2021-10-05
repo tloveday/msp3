@@ -43,8 +43,8 @@
     <!-- User reviews of Movie-->
     <div class="row center-align">
         <h4 class="red-text text-darken-2">Reviews</h4>
-        {% for review in reviews %}
-            <div class="row center-align">
+        <div class="row center-align">
+            {% for review in reviews %}
                 <div class="col s12 m4">
                     <div class="card card-review">
                         <h4 class="red-text text-darken-2">{{ review.headline }}</h4>
@@ -53,19 +53,17 @@
                             <p class="center-align">{{review.rating}}/5 <i class="fas fa rating-picked"></i></p>
                             <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                         </div>
-                           <!-- If author of review Allow them options to edit delete review.-->
-                    {% if session.user %}
-                    <div class="card-action center-align">
-                        <a class="btn" href="{{ url_for('edit_moviereview', reviews_id) }}">Edit</a>
-                        <a class="btn btn-red" href="#">Delete</a>
-                {% else %}
-                    </div>
-                {% endif%}
+                            <!-- If author of review Allow them options to edit delete review.-->
+                        {% if session.user == review.reviewed_by %}
+                            <div class="card-action center-align">
+                                <a class="btn btn-blue" href="{{ url_for('edit_moviereview', reviews_id=review._id) }}">Edit</a>
+                            </div>
+                        {% endif%}
                     </div>
                 </div>
-            </div>
-    {% endfor %}
-    
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 {% block footer %}
 {% endblock %}

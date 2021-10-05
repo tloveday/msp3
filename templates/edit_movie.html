@@ -4,7 +4,7 @@
 <h3 class="center-align">Editing Movie info</h3>
 <div class="row">
     <div class="col s8 offset-s2">
-        <form class="card-panel" method="POST" action="{{ url_for('edit_movie', movie_id=movie_id)}}">
+        <form class="card-panel" method="POST" action="{{ url_for('edit_movie', movie_id=movie._id)}}">
             <!-- Release Date-->
             <div class="row">
                 <div class="input-field col s6 offset-s3">

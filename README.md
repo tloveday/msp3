@@ -39,7 +39,11 @@ Wireframes for
 ## Design
 ### Colour schemes
 The Colour Scheme of the website is inspired by Marvel Entertainment's colour scheme
-Red - #ED1D24
+Red - #ED1D24 - This is the same Hexcode used as by Marvel in thier main brand logo be it for Comics or Movie/TV
+Blue - #4682B4 - This blue is used by Marvel for the superheroe team "The Fantastic Four" and is used to show the opposite commands for the buttons project wide
+Yellow - #FBCA03 - This yellow is commonly found in Iron Man projects in Marvel lore. This colour is only seen by Admin and is specific for Admin Tasks such as editing project information.
+Black and White  - #000000 #FFFFFF are set via Materialize CSS
+
 
 ### Typography 
 "Poppins" - 
@@ -49,7 +53,7 @@ Red - #ED1D24
 ### Imagery
 Majority of the imagry featured in the project comes from Marvel Entertainment and marvel Studios as Theatrical Poster Art or logos used to announce projects at ComicCon 2020 or at a Disney investor event of 2020.
 Logos for the website "MC REVUE" and "Pan Industries" were created by myself
-- MC RVUE is a spin on the Marvel Studios logo with the U in white to signal the MCU acronym for the Marvel Cinematic Universe
+- MC REVUE is a spin on the Marvel Studios logo with the U in white to signal the MCU acronym for the Marvel Cinematic Universe
 - Pan Industires is a play on the Paragrah syntax with a pseudo name for myself alongside one of the commonly used company names found within Marvel Lore 
 
 

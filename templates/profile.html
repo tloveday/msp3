@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col s12 m6 offset-m3">
             <div class="card-panel">
-                <h3 class="center-align red-text text-darken-2">
+                <h3 class="center-align red-text">
                     {{username}}'s Profile
                 </h3>
             </div>
@@ -12,75 +12,73 @@
     </div>
     <!--Movie review-->
     <div class="row center-align">
-        <h4 class="red-text text-darken-2">Movie  Reviews</h4>
-        {% for review in reviews %}
+        <h4 class="red-text">Movie  Reviews</h4>
+        
         <div class="row center-align">
-            <div class="col s12 m4">
-                <div class="card card-review">
-                    <h4 class="red-text text-darken-2">{{ review.headline }}</h4>
-                    <div class="card-content left-align">
-                        <p>{{ review.review }}</p>
-                        <p class="center-align">{{review.rating}}/5 <i class="fas fa rating-picked"></i></p>
-                        <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
-                    </div>
-                        <div class="card-action center-align">
-                            <button data-target="modal_movie" class="btn btn-red modal-trigger">Delete <i class="far fa-trash-alt"></i></button>
-                            <a class="btn btn-blue" href="{{ url_for('edit_moviereview', reviews_id=review._id) }}">Edit</a>
+            {% for review in reviews %}
+                <div class="col s12 m4">
+                    <div class="card card-review">
+                        <h4 class="red-text ">{{ review.headline }}</h4>
+                        <div class="card-content left-align">
+                            <p>{{ review.review }}</p>
+                            <p class="center-align">{{review.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                            <span>Reviewed by:</span> <span>{{ review.reviewed_by }}</span>
                         </div>
+                            <div class="card-action center-align">
+                                <button data-target="modal_movie{{review._id}}" class="btn btn-red modal-trigger">Delete <i class="far fa-trash-alt"></i></button>
+                                <a class="btn btn-blue" href="{{ url_for('edit_moviereview', reviews_id=review._id) }}">Edit</a>
+                            </div>
+                    </div>
                 </div>
-            </div>
+                <!-- Modal Structure Movie -->
+                <div id="modal_movie{{review._id}}" class="modal center-align">
+                    <div class="modal-content">
+                        <h4><i class="fas fa-exclamation-triangle red-text"></i></h4>
+                    <p>Are you sure you want to delete this review?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for('delete_moviereview', reviews_id=review._id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt"></i></a>
+                        <button class="btn btn-blue modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
+                    </div>
+                </div>
+
+            {% endfor %}
         </div>
-    {% endfor %}
     </div>
     <!-- Television reviews-->
     <div class="row center-align">
         <h4 class="red-text text-darken-2">Television Reviews</h4>
         <div class="row center-align">
             {% for tvreview in tv_reviews %}
-            <div class="col s12 m3">
-                <div class="card card-review">
-                    <h4 class="red-text text-darken-2">{{ tvreview.headline }}</h4>
-                    <div class="card-content left-align">
-                        <p>{{ tvreview.review }}</p>
-                        <p class="center-align">{{tvreview.rating}}/5 <i class="fas fa rating-picked"></i></p>
-                        <span>Reviewed by:</span> <span>{{ tvreview.reviewed_by }}</span>
-                    </div>
-                        <div class="card-action center-align">
-                            <button data-target="modal_tv" class="btn btn-red modal-trigger">Delete <i class="far fa-trash-alt"></i></button>
-                            <a class="btn btn-blue" href="{{ url_for('edit_tvreview', tvreviews_id=tvreview._id) }}">Edit</a>
+                <div class="col s12 m3">
+                    <div class="card card-review">
+                        <h4 class="red-text text-darken-2">{{ tvreview.headline }}</h4>
+                        <div class="card-content left-align">
+                            <p>{{ tvreview.review }}</p>
+                            <p class="center-align">{{tvreview.rating}}/5 <i class="fas fa rating-picked"></i></p>
+                            <span>Reviewed by:</span> <span>{{ tvreview.reviewed_by }}</span>
                         </div>
+                            <div class="card-action center-align">
+                                <button data-target="modal_tv{{tvreview._id}}" class="btn btn-red modal-trigger">Delete <i class="far fa-trash-alt"></i></button>
+                                <a class="btn btn-blue" href="{{ url_for('edit_tvreview', tvreviews_id=tvreview._id) }}">Edit</a>
+                            </div>
+                    </div>
                 </div>
-            </div>
+
+                <!-- Modal Structure TV -->
+                <div id="modal_tv{{tvreview._id}}" class="modal center-align">
+                    <div class="modal-content">
+                    <h4><i class="fas fa-exclamation-triangle red-text"></i></h4>
+                    <p>Are you sure you want to delete this review?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for('delete_tvreview', tvreviews_id=tvreview._id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt"></i></a>
+                        <button class="btn btn-blue modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
     </div>
-
-    
-    <!-- Modal Structure Movie -->
-  <div id="modal_movie" class="modal center-align">
-    <div class="modal-content">
-        <h4><i class="fas fa-exclamation-triangle red-text"></i></h4>
-      <p>Are you sure you want to delete this review?</p>
-    </div>
-    <div class="modal-footer">
-        <a href="{{ url_for('delete_moviereview', reviews_id=reviews._id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt"></i></a>
-        <button class="btn btn-blue modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
-
-    </div>
-  </div>
-
-    <!-- Modal Structure TV -->
-  <div id="modal_tv" class="modal center-align">
-    <div class="modal-content">
-      <h4><i class="fas fa-exclamation-triangle red-text"></i></h4>
-      <p>Are you sure you want to delete this review?</p>
-    </div>
-    <div class="modal-footer">
-        <a href="{{ url_for('delete_tvreview', tvreviews_id=tvreviews_id) }}" class="modal-close btn btn-red">Delete <i class="far fa-trash-alt"></i></a>
-        <button class="btn btn-blue modal-close">Cancel<i class="far fa-arrow-alt-circle-left right"></i></button>
-    </div>
-  </div>
-    
 {% endblock %}
 {% block footer %}
 {% endblock %}
