@@ -33,9 +33,6 @@ The brief was to build an interactive front-end site that responds to users' act
 ### Wireframes
 - Wireframes can be found [here](wireframes.md)
 
-
-### Database Structure
-
 ### Security
 During development sensitive data, such as database configuration variables, were saved in an env.py file. This file is not uploaded to GitHub for security purposes. These details are stored on Heroku once the site has reached the deployment stage.
 
@@ -51,7 +48,7 @@ The Colour Scheme of the website is inspired by Marvel Entertainment's colour sc
 
 
 ### Typography 
-"Poppins" - 
+"Poppins" - Poppins is a clear legible font which features in the logo of the project, and whenever large bodies of text are required.
 
 "Marvel" - is a complimentary font to "Poppins" and is more inkeeping with the Marvel Studios product.
 
@@ -65,10 +62,10 @@ Logos for the website "MC REVUE" and "Pan Industries" were created by myself
 
 
 ### Languages Used
-HTML
-CSS
-Javascript - JQuery
-Python
+- HTML
+- CSS
+- Javascript - JQuery
+- Python
 
 ## Frameworks used
 - [Balsamiq:](https://balsamiq.com/)
