@@ -1,4 +1,3 @@
-# MC REVUE
 ![MCREVUE](static/images/site/brand.png)
 View live project [here:](https://m-c-re-vue.herokuapp.com/)
 
@@ -11,7 +10,7 @@ The brief was to build an interactive front-end site that responds to users' act
 
 
 ## Mock Up
-
+![MCREVUE](static/images/site/mock_up.png)
 ## User Experince
 ### New User
 - View Movie and Television reviews
@@ -32,12 +31,8 @@ The brief was to build an interactive front-end site that responds to users' act
 
 ## Design
 ### Wireframes
-- Computer
-![Wireframe](assets/Wireframe/Computer.png)
-- Tablet
-![Wireframe](assets/Wireframe/Tablet.png)
-- Mobile
-![Wireframe](assets/Wireframe/Mobile.png)
+- Wireframes can be found [here](wireframes.md)
+
 
 ### Database Structure
 
@@ -108,8 +103,8 @@ Javascript was directly input into [JSHint](https://jshint.com/)
 
 Python was run with [Pylint](https://pypi.org/project/pylint/) in the terminal, the code is PEP8 compliant.
 
-### User goals
-#### New User
+## User goals
+### New User
 - Create reviews for MCU products viewed
     - Users are able to easily create accounts to review MCU Telvision and Movie 
 - View Movie and Television reviews
@@ -117,7 +112,7 @@ Python was run with [Pylint](https://pypi.org/project/pylint/) in the terminal, 
 - Create movie and Television reviews for MCU Movies and Televison Shows
     - Users can create reviews for Television Shows and Movies.
 
-#### Returning User
+### Returning User
 - Create reviews for MCU products viewed
     - Users can create reviews for MCU products
 - View reviews for MCU products.
@@ -125,7 +120,7 @@ Python was run with [Pylint](https://pypi.org/project/pylint/) in the terminal, 
 - Edit and delete personal reviews for MCU products
     - Users can edit and and delete personal reviews for MCU products
 
-#### Company Goal
+### Company Goal
 - Users can create accounts
     - Users can create aand log into individual accounts
 - Users create reviews for MCU products released
@@ -141,7 +136,9 @@ Python was run with [Pylint](https://pypi.org/project/pylint/) in the terminal, 
 ### Further Testing
 Website was tested on a variety of browsers including Google Chrome, Safari, Firefox, And Edge.
 The website was viewed on a variety of devices including desktop, laptop and mobile on both iOS and Android operating systems.
-Through the Twich community of Warwick Zero, which featured during  - Interactive Front End 
+Through the Twitch community of Warwick Zero, whom featured during Mile Stone Project 2 - Interactive Front End - the community have again been gracious enough to assit in testing the project throughout its development. Thier various levels of attention to details and personally knowing thier honesty has enabled open and flowing communication of what they beleive is going well and not. This included:
+- The addition of other colours - including the blue to provide a clear visual difference between buttons for action and buttons for cancelling actions.
+- Differentiation in Images used for Television shows and th Movies -Their testing resulted in changes to the Movies page with upcoming movies without theatrical posters being given the same size poster but with the released logo on black backgrounds - This was a similar design used solely for the Television Shows and provides a clear visual difference between the movie and TV sections of the applciation.
 
 ### Problems
 - Trying to workout how to include images in Mongo DB
@@ -150,17 +147,16 @@ Through the Twich community of Warwick Zero, which featured during  - Interactiv
 - Getting a Visual 5 star rating system controlled by JQuery to place information in the database upon submission of the review form.
     - Through discsssion with Antonio, my mentor, I included a hidden input that recorded the information printed to the console when clicking the stars from the Javascript/JQuery file.
 
-- 
-
 
 ### Further Development
-With greater undestanding and confidence in my abilities I would have liked to find ways to get the rating system to show up in readable reviews as stars. however due to limitations and time this was unable to be completed. 
-With better understanding into defensive programming I would like to have built a more robust application.
+- With greater undestanding and confidence in my abilities I would have liked to find ways to get the rating system to show up in readable reviews as stars. however due to limitations and time this was unable to be completed. 
+- With a more confident approach I would have like to include a search feature so that should users want to find information quickly about one particular character, or Marvel projects with the same character attached this would have been done.
 
 
 ## Bugs
 All images stored in the Static/Images folders Images not showing in both movie and television show information pages with the error code 404 emerging. - This was corrected and was a result of oversight. /static/images/... location.
 
+On occasion the project has instanced in TV Programmes where the buttons Revue and View fall outside of the card to whihc they are written. No matter how I tried to correc tthe problem- something always went wrong.
 
 ## Deployment
 ### Heroku
@@ -223,18 +219,25 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 ## Credits
-
 ### Media
 - [Marvel Studios](https://innersloth.com/gameAmongUs.php) 
+
+### Sources
+General sources of information for structure functionality and styling.
+
+[MDN Web Docs](https://developer.mozilla.org/en-US/)
+[W3 Schools](https://www.w3schools.com/js/default.asp)
+[Stack Over Flow](https://stackoverflow.com/)
+
+Code Institute, Full Stack Development course material.
 
 
 ### Acknowledgements
 
--  My Mentor Antonio for helpful feedback, and much needed guidance along a difficult path.
+-  My Mentor Antonio Rodriguez for helpful feedback, advice and much needed guidance along a difficult path.
 -  Tutor support at Code Institute for their support.
-- My family for thier continual feedback and honest critique, thier support and love (Even Liwsi and your sleepless nights).
-
-- 
+-  My family for thier continual feedback and honest critique, thier support and love (Even Liwsi and your sleepless nights, and Evie the Cockapoo pup) - Moving house during this project hasn't made it any easier on any of us and you've dealt with an absent father/husband when I've gone to 'work'.
+-  The streaming community of [Warwick Zero](https://twitch.tv/warwickzero) you have bouyed a tired "Pan" and allowed him to soar when worries of deadlines and errors got frustraitingly high.
 
 ### Final Thoughts
 This project has been one of the hardest tests I've ever experienced. I have sat through hours of youtube tutorials, on top of multiple re-watches of the entire module leading into the project. I have spent days looking at singular problems with no way forward, at several points during the process I have considered quitting the course completely due to the negative impact it was having on my mental health and personal  well-being. Whilst this may not be perfect or as I originally wanted and intended but it is the best that I can currently provide with my limited experience in Javascript. The deployed and submitted project is a personal triumph for myself and watching the reactions from the community of streamer "Warwick Zero" with the negativity I was experiencing around the build has made me realise I am capable, I can deliver - it might take me a little longer on occasion- but I can get it done, and not to place too much pressure on myself.# Impostor Hunt
